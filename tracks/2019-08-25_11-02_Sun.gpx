@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<gpx version="1.1" creator="OsmAnd 3.4.4" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>2019-08-25_11-02_Sun</name>
+  </metadata>
+  <trk>
+    <trkseg>
+      <trkpt lat="47.4743201" lon="8.3362757">
+        <ele>563.714</ele>
+        <time>2019-08-25T09:02:19Z</time>
+        <hdop>4.9</hdop>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>
