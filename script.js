@@ -3,13 +3,17 @@ var map;
 function initMap() {
     var home = { lat: 38.761012, lng: -9.164653 };
     var markers = [];
-    /* var positions = []; */
+    var positions = [];
     var lines = [];
 
     var colors = { walking: "#0066cc", other: "#f92672" };
     var icons = {
         photo: {
             url: "icons/camera-pin.png",
+            scaledSize: new google.maps.Size(40, 40),
+        },
+        video: {
+            url: "icons/video-pin.png",
             scaledSize: new google.maps.Size(40, 40),
         }
     }
@@ -38,17 +42,23 @@ function initMap() {
     } */
 
     for (let i = 0; i < points.length - 1; i++) {
-        var interval = (Date.parse(points[i + 1].date + " " + points[i + 1].time) - Date.parse(points[i].date + " " + points[i].time)) / 1000; // seconds
-        var distance = google.maps.geometry.spherical.computeDistanceBetween(new google.maps.LatLng(points[i].coordinates), new google.maps.LatLng(points[i + 1].coordinates)); //meters
+        if (points[i].coordinates)
+            positions.push(points[i])
+    }
+    
+    for (let i = 0; i < positions.length - 1; i++) {
+        if (positions[i].coordinates)
+        var interval = (Date.parse(positions[i + 1].date + " " + positions[i + 1].time) - Date.parse(positions[i].date + " " + positions[i].time)) / 1000; // seconds
+        var distance = google.maps.geometry.spherical.computeDistanceBetween(new google.maps.LatLng(positions[i].coordinates), new google.maps.LatLng(positions[i + 1].coordinates)); //meters
         var speed = (distance / 1000) / (interval / 3600); // km/h
 
-        addLine([points[i].coordinates, points[i + 1].coordinates], map, (speed < 7) ? colors["walking"] : colors["other"], (interval < 3600) ? 1 : 0.3);
+        addLine([positions[i].coordinates, positions[i + 1].coordinates], map, (speed < 7) ? colors["walking"] : colors["other"], (interval < 3600) ? 1 : 0.3);
 
-        addMarker(points[i].coordinates, null, points[i].type);
+        addMarker(positions[i].coordinates, null, positions[i].type);
 
         markers[i].addListener('click', function () {
             infowindow = new google.maps.InfoWindow({
-                content: points[i].date + " " + points[i].time
+                content: positions[i].date + " " + positions[i].time
             });
             infowindow.open(map, markers[i]);
         });
@@ -77,18 +87,18 @@ function initMap() {
         }
     });
 
-    /* for (var i=0; i<images.length; i++) {
-        var conv = ParseDMS(images[i].coordinates.lat + " " + images[i].coordinates.lng)
-        images[i].coordinates.lat = conv[0];
-        images[i].coordinates.lng = conv[1];
+    /* for (var i=0; i<photos.length; i++) {
+        if (photos[i].coordinates) {
+            photos[i].coordinates = ParseDMS(photos[i].coordinates.lat + " " + photos[i].coordinates.lng);
+        }
     }
+    console.log(JSON.stringify(photos))
 
     function ParseDMS(input) {
         var parts = input.split(/\s+/);
         var lat = ConvertDMSToDD(parts[0], parts[1], parts[2], parts[3]);
         var lng = ConvertDMSToDD(parts[4], parts[5], parts[6], parts[7]);
-        console.log(parts[0], parts[1], parts[2], parts[3]);
-        return [lat, lng];
+        return {lat: lat, lng: lng};
     }
 
     function ConvertDMSToDD(degrees, minutes, seconds, direction) {
