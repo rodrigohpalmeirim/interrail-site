@@ -59,7 +59,7 @@ html, body {
     height: auto !important;
 }
 
-#big-media {
+#media-viewer {
     display: none;
     position: absolute;
     top: 0;
