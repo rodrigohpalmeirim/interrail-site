@@ -1,1 +1,2 @@
 auto-adjust media column amount
+add exit photo viewer
