@@ -1,23 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Simple Map</title>
+    <title>Interrail Site</title>
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
     <div id="map"></div>
-    <video id="earth" src="earth/flight-to-paris/flight-to-paris.mp4" autoplay></video>
+    <video class="earth" id="place-video" src="earth/lisbon-airport/lisbon-airport.mp4" autoplay loop></video>
+    <video class="earth" id="transition-video" autoplay></video>
     <div id="media-pane">
       <div id=media>
         <img class="thumbnail" src="media/IMG_20190825_220843.jpg" onclick="big('media/IMG_20190825_220843.jpg')">
-        <img class="thumbnail" src="media/IMG_20190807_153552.jpg">
-        <img class="thumbnail" src="media/IMG_20190807_153552.jpg">
-        <img class="thumbnail" src="media/IMG_20190807_153552.jpg">
-        <img class="thumbnail" src="media/IMG_20190807_153552.jpg">
-        <img class="thumbnail" src="media/IMG_20190807_153552.jpg">
-        <img class="thumbnail" src="media/IMG_20190807_153552.jpg">
         <img class="thumbnail" src="media/IMG_20190807_153552.jpg">
         <img class="thumbnail" src="media/IMG_20190807_153552.jpg">
         <img class="thumbnail" src="media/IMG_20190807_153552.jpg">
@@ -31,6 +26,7 @@
     <script src="points.js"></script>
     <script src="places.js"></script>
     <script src="map.js"></script>
+    <script src="earth.js"></script>
     <script src="pan-animation.js"></script>
     <script src="media.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&callback=initMap&libraries=geometry" async defer></script>

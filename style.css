@@ -12,7 +12,7 @@ html, body {
     overflow: hidden;
 }
 
-#earth {
+.earth {
     position: absolute;
     top: 0;
     left: 0;
@@ -21,17 +21,21 @@ html, body {
 }
 
 @media (min-aspect-ratio: 16/9) {
-    #earth {
+    .earth {
         height: 500%;
         top: -200%;
     }
 }
   
 @media (max-aspect-ratio: 16/9) {
-    #earth {
+    .earth {
         width: 500%;
         left: -200%;
     }
+}
+
+#transition-video, #reversed-transition-video {
+    display: none;
 }
 
 #media-pane {
