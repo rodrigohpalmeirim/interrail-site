@@ -5,11 +5,13 @@
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="clock.css">
   </head>
   <body>
     <div id="map"></div>
-    <video class="earth" id="place-video" src="earth/lisbon-airport/lisbon-airport.mp4" autoplay loop></video>
-    <video class="earth" id="transition-video" autoplay></video>
+    <video class="earth" id="place-video" src="earth/places/lisbon-airport.mp4" loop></video>
+    <video class="earth" id="transition-video" src="earth/paths/plane-to-paris.mp4"></video>
+    <video class="earth" id="reversed-transition-video"></video>
     <div id="media-pane">
       <div id=media>
         <img class="thumbnail" src="media/IMG_20190825_220843.jpg" onclick="big('media/IMG_20190825_220843.jpg')">
@@ -23,9 +25,29 @@
       <img id="big-photo" src="media/IMG_20190807_153552.jpg">
       <video id="big-video"></video>
     </div>
+    <div class="clock">
+      <div class="analog-clock">
+        <div class="outer-clock-face">
+          <div class="marking marking-one"></div>
+          <div class="marking marking-two"></div>
+          <div class="marking marking-three"></div>
+          <div class="marking marking-four"></div>
+          <div class="inner-clock-face">
+            <div class="hand hour-hand"></div>
+            <div class="hand min-hand"></div>
+          </div>
+        </div>
+      </div>
+      <div class="digital-clock">
+        <span class="time"></span>
+        <span class="date"></span>
+        <span class="day"></span>
+      </div>
+    </div>
     <script src="points.js"></script>
     <script src="places.js"></script>
     <script src="map.js"></script>
+    <script src="clock.js"></script>
     <script src="earth.js"></script>
     <script src="pan-animation.js"></script>
     <script src="media.js"></script>

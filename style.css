@@ -35,7 +35,8 @@ html, body {
 }
 
 #transition-video, #reversed-transition-video {
-    display: none;
+    opacity: 0;
+    transition: opacity 500ms;
 }
 
 #media-pane {
