@@ -7,7 +7,7 @@ var timeouts = [];
 
 setClock(Date.parse(places[place].arrival.date+" "+places[place].arrival.time))
 
-placeVideo.addEventListener("loadeddata", function() {placeVideo.play()});
+placeVideo.addEventListener("canplay", function() {placeVideo.play();});
 
 function arrowKeyControl() {
     document.onkeydown = function (e) {
@@ -17,7 +17,7 @@ function arrowKeyControl() {
                 setClock(Date.parse(places[place+1].arrival.date+" "+places[place+1].arrival.time.split("+")[0]))
                 stopClock();
                 placeVideo.src = places[++place].video;
-                placeVideo.play();
+                /* placeVideo.play(); */
                 transitionVideo.style.opacity = 0;
                 reversedTransitionVideo.style.opacity = 0;
                 if (place < places.length-1) transitionVideo.src = places[place+1].transitionVideo;
@@ -27,24 +27,29 @@ function arrowKeyControl() {
             } else if (place < places.length-1) {
                 fastForward(Date.parse(places[place].departure.date+" "+places[place].departure.time.split("+")[0]), Date.parse(places[place+1].arrival.date+" "+places[place+1].arrival.time.split("+")[0]))
                 transitioning = true;
+                timeouts.push(setTimeout(() => {placeVideo.pause();}, 500));
                 transitionVideo.play();
                 transitionVideo.style.opacity = 1;
-                timeouts.push(setTimeout(() => {placeVideo.src = places[place+1].video;}, 500));
-                timeouts.push(setTimeout(() => {
+                transitionVideo.onended = function() {
                     place++;
-                    placeVideo.play();
-                    transitionVideo.style.opacity = 0;
-                    if (place < places.length-1) setTimeout(() => {transitionVideo.src = places[place+1].transitionVideo;}, 500);
+                    /* placeVideo.play(); */
+                    placeVideo.src = places[place].video;
+                    placeVideo.oncanplay = function() {
+                        transitionVideo.style.opacity = 0;
+                        if (place < places.length-1) timeouts.push(setTimeout(() => {transitionVideo.src = places[place+1].transitionVideo;}, 500));
+                        placeVideo.oncanplay = null;
+                    };
                     reversedTransitionVideo.src = places[place].transitionVideo.split(".")[0] + "-reversed.mp4";
                     transitioning = false;
-                }, 5000));
+                    transitionVideo.onended = null;
+                };
             }
         } else if (e.key == "ArrowLeft") {
             if (transitioning) {
                 setClock(Date.parse(places[place].arrival.date+" "+places[place].arrival.time.split("+")[0]))
                 stopClock();
                 placeVideo.src = places[place].video;
-                placeVideo.play();
+                /* placeVideo.play(); */
                 transitionVideo.style.opacity = 0;
                 reversedTransitionVideo.style.opacity = 0;
                 transitionVideo.src = places[place+1].transitionVideo;
@@ -55,16 +60,20 @@ function arrowKeyControl() {
                 fastForward(Date.parse(places[place].arrival.date+" "+places[place].arrival.time.split("+")[0]), Date.parse(places[place-1].arrival.date+" "+places[place-1].arrival.time.split("+")[0]))
                 transitioning = true;
                 place--;
+                timeouts.push(setTimeout(() => {placeVideo.pause();}, 500));
                 reversedTransitionVideo.play();
                 reversedTransitionVideo.style.opacity = 1;
-                timeouts.push(setTimeout(() => {placeVideo.src = places[place].video;}, 500));
-                timeouts.push(setTimeout(() => {
-                    placeVideo.play();
-                    reversedTransitionVideo.style.opacity = 0;
+                reversedTransitionVideo.onended = function() {
+                    /* placeVideo.play(); */
+                    placeVideo.src = places[place].video;
+                    placeVideo.oncanplay = function() {
+                        reversedTransitionVideo.style.opacity = 0;
+                        if (place > 0) timeouts.push(setTimeout(() => {reversedTransitionVideo.src = places[place].transitionVideo.split(".")[0] + "-reversed.mp4";}, 500));
+                        placeVideo.oncanplay = null;
+                    }
                     transitionVideo.src = places[place+1].transitionVideo;
-                    if (place > 0) setTimeout(() => {reversedTransitionVideo.src = places[place].transitionVideo.split(".")[0] + "-reversed.mp4";}, 500);
                     transitioning = false;
-                }, 5000));
+                }
             }
         }
     }
@@ -75,4 +84,7 @@ function clearTimeouts() {
     for (t of timeouts)
         clearTimeout(t);
     timeouts = [];
+    placeVideo.oncanplay = null;
+    transitionVideo.onended = null;
+    reversedTransitionVideo.onended = null;
 }
