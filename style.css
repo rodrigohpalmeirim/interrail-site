@@ -87,3 +87,26 @@ html, body {
     opacity: 0;
     transition: 200ms;
 }
+
+#day-announcement {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0;
+    transition: 500ms;
+}
+
+#day-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+    font-size: 10rem;
+    font-family: "Product Sans";
+    opacity: 0;
+    transition: 500ms;
+}
