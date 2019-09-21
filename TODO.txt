@@ -1,4 +1,5 @@
 auto-adjust media column amount
 add exit photo viewer
 loading screen
-rerender lisbon-airport.mp4 and plane-to-paris.mp4
+rerender path-to-luxembourg-gardens.mp4 (improve path)
+rerender paris-orly-airport.mp4 (improve lighting)
