@@ -10,7 +10,7 @@ function displayDay(day) {
     let textWrapper = document.querySelector('.ml1 .letters');
     textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>"); // Wrap every letter in a span
 
-    setTimeout(() => {announcement.style.opacity = 1;}, 10);
+    setTimeout(() => {announcement.style.opacity = 1;}, 50);
 
     timeouts.push(setTimeout(() => {
         anime.timeline({})
@@ -55,7 +55,7 @@ function displayPlaceName(name) {
     document.querySelector(".spinner").style.opacity = 0;
     text.textContent = name;
 
-    setTimeout(() => {announcement.style.opacity = 1;}, 10);
+    setTimeout(() => {announcement.style.opacity = 1;}, 50);
 
     var textWrapper = document.querySelector('.ml11 .letters');
     textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"); // Wrap every letter in a span
