@@ -18,7 +18,7 @@ function arrowKeyControl() {
                 hideAnnouncement();
                 clearTimeouts();
                 setClock(Date.parse(places[place+1].arrival.date+" "+places[place+1].arrival.time.split("+")[0]))
-                stopClock();
+                clearInterval(clockInterval);;
                 placeVideo.src = places[++place].video;
                 loaded = false;
                 placeVideo.oncanplay = function() {
@@ -47,10 +47,10 @@ function arrowKeyControl() {
                     displayPlaceName(places[place].name);
                     /* placeVideo.play(); */
                     placeVideo.src = places[place].video;
+                    if (place < places.length-1) timeouts.push(setTimeout(() => {transitionVideo.src = places[place+1].transitionVideo;}, 500));
                     placeVideo.oncanplay = function() {
                         loaded = true;
                         transitionVideo.style.opacity = 0;
-                        if (place < places.length-1) timeouts.push(setTimeout(() => {transitionVideo.src = places[place+1].transitionVideo;}, 500));
                         placeVideo.oncanplay = null;
                     };
                     reversedTransitionVideo.src = places[place].transitionVideo.split(".")[0] + "-reversed.mp4";
@@ -63,7 +63,7 @@ function arrowKeyControl() {
                 hideAnnouncement();
                 clearTimeouts();
                 setClock(Date.parse(places[place].arrival.date+" "+places[place].arrival.time.split("+")[0]))
-                stopClock();
+                clearInterval(clockInterval);;
                 placeVideo.src = places[place].video;
                 loaded = false;
                 placeVideo.oncanplay = function() {
@@ -92,10 +92,10 @@ function arrowKeyControl() {
                     placeVideo.src = places[place].video;
                     displayPlaceName(places[place].name);
                     loaded = false;
+                    if (place > 0) timeouts.push(setTimeout(() => {reversedTransitionVideo.src = places[place].transitionVideo.split(".")[0] + "-reversed.mp4";}, 500));
                     placeVideo.oncanplay = function() {
                         loaded = true;
                         reversedTransitionVideo.style.opacity = 0;
-                        if (place > 0) timeouts.push(setTimeout(() => {reversedTransitionVideo.src = places[place].transitionVideo.split(".")[0] + "-reversed.mp4";}, 500));
                         placeVideo.oncanplay = null;
                     }
                     transitionVideo.src = places[place+1].transitionVideo;
