@@ -3,3 +3,4 @@ add exit photo viewer
 loading screen
 rerender path-to-luxembourg-gardens.mp4 (improve path)
 rerender paris-orly-airport.mp4 (improve lighting)
+rerender eiffel-tower.mp4 (weather and zoom)
