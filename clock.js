@@ -22,21 +22,31 @@ function setClock(millis) {
 }
 
 function fastForward(startMillis, endMillis) {
-    var date = new Date(startMillis);
-    var iterMillis = (endMillis-startMillis) / 100;
+    let date = new Date(startMillis);
+    let endDate = new Date(endMillis);
+    let iterMillis = (endMillis-startMillis) / 100;
+    let day = date.getDate();
 
-    clockInterval = setInterval(function() {
+    clearInterval(clockInterval);
+
+    clockInterval = setInterval(function f() {
         setClock(date);
         date = new Date(date.getTime() + iterMillis);
+        if (date.getDate() > day) {
+            displayDay(date.getDate() - 6);
+            day = date.getDate();
+            timeouts.push(setTimeout(() => {
+                transitionVideo.pause();
+                clearInterval(clockInterval);
+            }, 500));
+            timeouts.push(setTimeout(() => {
+                clockInterval = setInterval(f, 50);
+                transitionVideo.play()
+            }, 2000));
+        }
+        if ((date - endDate) * (endMillis - startMillis) >= 0) {
+            clearInterval(clockInterval);
+            setClock(endDate);
+        }
     }, 50);
-
-    clockTimeout = setTimeout(function() {
-        clearInterval(clockInterval);
-        setClock(date);
-    }, 5000);
-}
-
-function stopClock() {
-    clearInterval(clockInterval);
-    clearTimeout(clockTimeout);
 }
