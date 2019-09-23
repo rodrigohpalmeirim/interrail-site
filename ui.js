@@ -52,7 +52,7 @@ function displayPlaceName(name) {
     document.querySelector(".ml11").style.opacity = 1;
     announcement.style.display = "block";
     announcement.style.backgroundColor = "#206490";
-    document.querySelector(".spinner").style.opacity = 0;
+    document.querySelector(".spinner").style.opacity = 1;
     text.textContent = name;
 
     setTimeout(() => {announcement.style.opacity = 1;}, 50);
@@ -93,12 +93,12 @@ function displayPlaceName(name) {
             if (loaded) {
                 timeouts.push(setTimeout(() => {hideAnnouncement();}, 500));
             } else {
-                anime.timeline().add({
+                /* anime.timeline().add({
                     targets: '.spinner',
                     opacity: [0,1],
                     duration: 300,
                     easing: "easeInExpo"
-                });
+                }); */
                 timeouts.push(setTimeout(() => {
                     let interval = setInterval(() => {
                         if (loaded) {
