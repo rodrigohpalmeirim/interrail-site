@@ -19,13 +19,16 @@ function setClock(millis) {
     hourHand.style.transform = `rotate(${hourDegrees}deg)`;
 
     document.querySelector(".time").textContent = (""+hour).padStart(2, "0")+":"+(""+mins).padStart(2, "0");
+    document.querySelector(".timezone").textContent = "(GMT+"+Number(places[place].arrival.time.split("+")[1].substr(0, 2))+")";
+    document.querySelector(".date").textContent = date.toLocaleDateString();
+    document.querySelector(".day").textContent = "Day "+ (date.getDate() - 6);
 }
 
 function fastForward(startMillis, endMillis) {
     let date = new Date(startMillis);
     let endDate = new Date(endMillis);
     let iterMillis = (endMillis-startMillis) / 100;
-    let day = date.getDate();
+    var day = date.getDate();
 
     clearInterval(clockInterval);
 
