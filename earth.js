@@ -17,9 +17,9 @@ function arrowKeyControl() {
             if (transitioning) {
                 hideAnnouncement();
                 clearTimeouts();
-                setClock(Date.parse(places[place+1].arrival.date+" "+places[place+1].arrival.time.split("+")[0]))
-                clearInterval(clockInterval);;
+                clearInterval(clockInterval);
                 placeVideo.src = places[++place].video;
+                setClock(Date.parse(places[place].arrival.date+" "+places[place].arrival.time.split("+")[0]));
                 loaded = false;
                 placeVideo.oncanplay = function() {
                     loaded = true;
@@ -56,15 +56,16 @@ function arrowKeyControl() {
                     reversedTransitionVideo.src = places[place].transitionVideo.split(".")[0] + "-reversed.mp4";
                     transitioning = false;
                     transitionVideo.onended = null;
+                    setClock(Date.parse(places[place].arrival.date+" "+places[place].arrival.time.split("+")[0]));
                 };
             }
         } else if (e.key == "ArrowLeft") {
             if (transitioning) {
                 hideAnnouncement();
                 clearTimeouts();
-                setClock(Date.parse(places[place].arrival.date+" "+places[place].arrival.time.split("+")[0]))
-                clearInterval(clockInterval);;
+                clearInterval(clockInterval);
                 placeVideo.src = places[place].video;
+                setClock(Date.parse(places[place].arrival.date+" "+places[place].arrival.time.split("+")[0]));
                 loaded = false;
                 placeVideo.oncanplay = function() {
                     loaded = true;
