@@ -27,6 +27,7 @@ function arrowKeyControl() {
                 }
                 /* placeVideo.play(); */
                 timeouts.push(setTimeout(() => {
+                    updateMedia(new Date(places[place].arrival.date+" "+places[place].arrival.time), new Date(places[place].departure.date+" "+places[place].departure.time));
                     transitionVideo.style.opacity = 0;
                     reversedTransitionVideo.style.opacity = 0;
                     if (place < places.length-1) transitionVideo.src = places[place+1].transitionVideo;
@@ -36,7 +37,8 @@ function arrowKeyControl() {
                 displayPlaceName(places[place].name);
             } else if (place < places.length-1) {
                 hideAnnouncement();
-                fastForward(Date.parse(places[place].departure.date+" "+places[place].departure.time.split("+")[0]), Date.parse(places[place+1].arrival.date+" "+places[place+1].arrival.time.split("+")[0]))
+                fastForward(Date.parse(places[place].departure.date+" "+places[place].departure.time.split("+")[0]), Date.parse(places[place+1].arrival.date+" "+places[place+1].arrival.time.split("+")[0]));
+                updateMedia(new Date(places[place].departure.date+" "+places[place].departure.time), new Date(places[place+1].arrival.date+" "+places[place+1].arrival.time));
                 transitioning = true;
                 timeouts.push(setTimeout(() => {placeVideo.pause();}, 500));
                 transitionVideo.play();
@@ -57,6 +59,7 @@ function arrowKeyControl() {
                     transitioning = false;
                     transitionVideo.onended = null;
                     setClock(Date.parse(places[place].arrival.date+" "+places[place].arrival.time.split("+")[0]));
+                    timeouts.push(setTimeout(function() {updateMedia(new Date(places[place].arrival.date+" "+places[place].arrival.time), new Date(places[place].departure.date+" "+places[place].departure.time));}, 500));
                 };
             }
         } else if (e.key == "ArrowLeft") {
@@ -73,6 +76,7 @@ function arrowKeyControl() {
                 }
                 /* placeVideo.play(); */
                 timeouts.push(setTimeout(() => {
+                    updateMedia(new Date(places[place].arrival.date+" "+places[place].arrival.time), new Date(places[place].departure.date+" "+places[place].departure.time));
                     transitionVideo.style.opacity = 0;
                     reversedTransitionVideo.style.opacity = 0;
                     transitionVideo.src = places[place+1].transitionVideo;
@@ -82,7 +86,8 @@ function arrowKeyControl() {
                 displayPlaceName(places[place].name);
             } else if (place > 0) {
                 hideAnnouncement();
-                fastForward(Date.parse(places[place].arrival.date+" "+places[place].arrival.time.split("+")[0]), Date.parse(places[place-1].arrival.date+" "+places[place-1].arrival.time.split("+")[0]))
+                fastForward(Date.parse(places[place].arrival.date+" "+places[place].arrival.time.split("+")[0]), Date.parse(places[place-1].arrival.date+" "+places[place-1].arrival.time.split("+")[0]));
+                updateMedia(new Date(places[place-1].departure.date+" "+places[place-1].departure.time), new Date(places[place].arrival.date+" "+places[place].arrival.time));
                 transitioning = true;
                 place--;
                 timeouts.push(setTimeout(() => {placeVideo.pause();}, 500));
@@ -93,7 +98,9 @@ function arrowKeyControl() {
                     placeVideo.src = places[place].video;
                     displayPlaceName(places[place].name);
                     loaded = false;
-                    if (place > 0) timeouts.push(setTimeout(() => {reversedTransitionVideo.src = places[place].transitionVideo.split(".")[0] + "-reversed.mp4";}, 500));
+                    if (place > 0) timeouts.push(setTimeout(() => {
+                        reversedTransitionVideo.src = places[place].transitionVideo.split(".")[0] + "-reversed.mp4";
+                    }, 500));
                     placeVideo.oncanplay = function() {
                         loaded = true;
                         reversedTransitionVideo.style.opacity = 0;
@@ -101,6 +108,7 @@ function arrowKeyControl() {
                     }
                     transitionVideo.src = places[place+1].transitionVideo;
                     transitioning = false;
+                    timeouts.push(setTimeout(function() {updateMedia(new Date(places[place].arrival.date+" "+places[place].arrival.time), new Date(places[place].departure.date+" "+places[place].departure.time));}, 500));
                 }
             }
         }
