@@ -7,6 +7,7 @@ var loaded = true;
 var timeouts = [];
 
 setClock(Date.parse(places[place].arrival.date+" "+places[place].arrival.time))
+updateMedia(new Date(places[place].arrival.date+" "+places[place].arrival.time), new Date(places[place].departure.date+" "+places[place].departure.time));
 
 placeVideo.addEventListener("canplay", function() {placeVideo.play();});
 
