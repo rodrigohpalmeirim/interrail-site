@@ -47,9 +47,10 @@ html, body {
     top: 0;
     right: 0;
     height: 100%;
-    width: 30%;
+    width: 0%;
     background-color: rgba(0,0,0,0.7);
     overflow: scroll;
+    transition: 500ms;
 }
 #media-pane::-webkit-scrollbar {
     display: none;
