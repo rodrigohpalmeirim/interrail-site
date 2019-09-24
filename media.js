@@ -41,7 +41,7 @@ function updateMedia(startDate, endDate) {
             if (points[i].type == "photo")
                 media.innerHTML += `<img class="thumbnail" src="`+"media/"+points[i].file+`" onclick="big('`+"media/"+points[i].file+`', 'photo')">`;
             else if (points[i].type == "video")
-                media.innerHTML += `<video class="thumbnail" src="`+"media/"+points[i].file+`" onclick="big('`+"media/"+points[i].file+`', 'video')"></video>`;
+                media.innerHTML += `<div style="position: relative"><video class="thumbnail" src="`+"media/"+points[i].file+`" onclick="big('`+"media/"+points[i].file+`', 'video')"></video><img class="play-button" src="icons/play-button.png"></div>`;
         }
     }
     if (media.childElementCount == 0)
