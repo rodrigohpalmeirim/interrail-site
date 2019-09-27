@@ -1,3 +1,25 @@
+document.querySelector("#current-place").textContent = places[0].name;
+
+document.addEventListener("click", function(e) {
+    let placeSelector = document.querySelector("#place-selector");
+    let previousPlaces = document.querySelector("#previous-places");
+    if (e.target.id == "current-place") {
+        placeSelector.style.height = "235px";
+        placeSelector.style.overflow = "scroll";
+        placeSelector.scrollTo(0, previousPlaces.scrollHeight-100);
+        placeSelector.style.backgroundColor = "#206490"
+    } else {
+        setTimeout(() => {placeSelector.scrollTo(0, previousPlaces.scrollHeight);}, 50);
+        placeSelector.style.height = "";
+        placeSelector.style.overflow = "hidden";
+        setTimeout(() => {placeSelector.style.backgroundColor = "";}, 200);
+    }
+})
+
+function selectPlace() {
+    let placeSelector = document.querySelector("#place-selector");
+    placeSelector.style.height = "100px";
+}
 
 function displayDay(day) {
     let text = document.querySelector("#day-text");
@@ -41,9 +63,6 @@ function displayDay(day) {
 
     timeouts.push(setTimeout(() => {hideAnnouncement();}, 2500));
 }
-
-setTimeout(() => {displayPlaceName(places[0].name);}, 2000);
-
 
 function displayPlaceName(name) {
     let text = document.querySelector("#place-name");

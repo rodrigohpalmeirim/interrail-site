@@ -13,6 +13,9 @@ html, body {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    font-family: "Product Sans";
+    color: white;
+    user-select: none;
 }
 
 .earth {
@@ -25,15 +28,15 @@ html, body {
 
 @media (min-aspect-ratio: 16/9) {
     .earth {
-        height: 500%;
-        top: -200%;
+        height: 300%;
+        top: -100%;
     }
 }
   
 @media (max-aspect-ratio: 16/9) {
     .earth {
-        width: 500%;
-        left: -200%;
+        width: 300%;
+        left: -100%;
     }
 }
 
@@ -41,6 +44,41 @@ html, body {
     opacity: 0;
     transition: opacity 500ms;
 }
+
+
+#place-selector {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%);
+    height: 35px;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 5px;
+    line-height: 35px;
+    cursor: pointer;
+    transition: 320ms;
+    scroll-behavior: smooth;
+}
+#place-selector:hover {
+    background-color: #206490;
+}
+#previous-places, #next-places {
+    display: flex;
+    flex-direction: column;
+    transition: 500ms;
+}
+#previous-places {
+    flex-direction: column-reverse;
+}
+
+.place-name, #current-place {
+    padding: 0 10px;
+}
+
 
 #media-pane {
     position: absolute;
@@ -52,7 +90,8 @@ html, body {
     overflow: scroll;
     transition: 500ms;
 }
-#media-pane::-webkit-scrollbar {
+
+::-webkit-scrollbar {
     display: none;
 }
 
@@ -136,7 +175,6 @@ html, body {
 
 .ml1 .letter {
     display: inline-block;
-    color: white;
     opacity: 0;
     font-family: "Inter";
     line-height: 1em;
@@ -200,9 +238,7 @@ html, body {
 .ml11 .letter {
     display: inline-block;
     line-height: 1em;
-    color: white;
     opacity: 0;
-    font-family: "Product Sans"
 }
 
 
