@@ -66,13 +66,10 @@ html, body {
 #place-selector:hover {
     background-color: #206490;
 }
-#previous-places, #next-places {
+#previous-places {
     display: flex;
     flex-direction: column;
     transition: 500ms;
-}
-#previous-places {
-    flex-direction: column-reverse;
 }
 
 .place-name, #current-place {
