@@ -1,6 +1,10 @@
+fix place selector closing bug
 add exit photo viewer
 fix clock hands misaligned
 fix animation canceling
+fix small screen issues
+add place announcement colors
+center things to accomodate media pane
 add panoramas
 rerender lisbon-airport.mp4 (fix loop gap)
 rerender path-to-luxembourg-gardens.mp4 (improve path)
