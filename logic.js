@@ -7,6 +7,7 @@ var timeouts = [];
 
 setClock(Date.parse(places[place].arrival.date+" "+places[place].arrival.time))
 updateMedia(new Date(places[place].arrival.date+" "+places[place].arrival.time), new Date(places[place].departure.date+" "+places[place].departure.time));
+updateNavigationArrows();
 
 placeVideo.addEventListener("canplay", function() {placeVideo.play();});
 
@@ -17,6 +18,8 @@ function arrowKeyControl() {
             nextPlace();
         } else if (e.key == "ArrowLeft") {
             previousPlace();
+        } else if (e.key == "Escape") {
+            collapsePlaceSelector();
         }
     }
 }
@@ -27,11 +30,12 @@ function nextPlace() {
         place++;
         skipTransition();
     } else if (place < places.length-1) {
+        transitioning = true;
         hidePlaceSelector();
         hideAnnouncement();
+        updateNavigationArrows();
         fastForward(Date.parse(places[place].departure.date+" "+places[place].departure.time.split("+")[0]), Date.parse(places[place+1].arrival.date+" "+places[place+1].arrival.time.split("+")[0]));
         updateMedia(new Date(places[place].departure.date+" "+places[place].departure.time), new Date(places[place+1].arrival.date+" "+places[place+1].arrival.time));
-        transitioning = true;
         timeouts.push(setTimeout(() => {placeVideo.pause();}, 500));
         transitionVideo.play();
         transitionVideo.style.opacity = 1;
@@ -61,11 +65,12 @@ function previousPlace() {
     if (transitioning) {
         skipTransition();
     } else if (place > 0) {
+        transitioning = true;
         hidePlaceSelector();
         hideAnnouncement();
+        updateNavigationArrows();
         fastForward(Date.parse(places[place].arrival.date+" "+places[place].arrival.time.split("+")[0]), Date.parse(places[place-1].arrival.date+" "+places[place-1].arrival.time.split("+")[0]));
         updateMedia(new Date(places[place-1].departure.date+" "+places[place-1].departure.time), new Date(places[place].arrival.date+" "+places[place].arrival.time));
-        transitioning = true;
         place--;
         timeouts.push(setTimeout(() => {placeVideo.pause();}, 500));
         reversedTransitionVideo.play();
@@ -96,6 +101,7 @@ function jumpToPlace(placeID) {
     displayPlaceName(places[place].name);
     /* placeVideo.play(); */
     timeouts.push(setTimeout(() => {
+        updateNavigationArrows();
         setClock(Date.parse(places[place].arrival.date+" "+places[place].arrival.time.split("+")[0]));
         placeVideo.src = places[place].video;
         loaded = false;
@@ -120,6 +126,7 @@ function skipTransition() {
     placeVideo.oncanplay = function() {
         loaded = true;
         placeVideo.oncanplay = null;
+        updateNavigationArrows();
         showPlaceSelector();
     }
     /* placeVideo.play(); */

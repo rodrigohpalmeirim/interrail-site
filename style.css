@@ -84,6 +84,22 @@ html, body {
 .place-name:hover {
     background-color: rgba(255,255,255,0.2);
 }
+#next, #previous {
+    position: absolute;
+    height: 40px;
+    top: 50%;
+    cursor: pointer;
+    opacity: 0;
+    transition: 500ms;
+}
+#next {
+    right: 1%;
+    transform: translateY(-50%);
+}
+#previous {
+    left: 1%;
+    transform: translateY(-50%) rotate(180deg);
+}
 
 
 #media-pane {

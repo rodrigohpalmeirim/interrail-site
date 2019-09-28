@@ -4,13 +4,13 @@ showPlaceSelector();
 
 document.addEventListener("click", function(e) {
     if (e.target.id == "current-place") {
-        explandPlaceSelector();
+        expandPlaceSelector();
     } else {
         collapsePlaceSelector();
     }
 });
 
-function explandPlaceSelector() {
+function expandPlaceSelector() {
     let placeSelector = document.querySelector("#place-selector");
     let currentPlace = document.querySelector("#current-place");
     let previousPlaces = document.querySelector("#previous-places");
@@ -47,10 +47,33 @@ function showPlaceSelector() {
         placeSelector.innerHTML += `<span class="place-name" onclick="jumpToPlace(`+i+`)">`+places[i].name+`</span>`;
     placeSelector.scrollTo(0, document.querySelector("#previous-places").scrollHeight);
     placeSelector.style.opacity = "";
+    placeSelector.style.pointerEvents = "";
 }
 
 function hidePlaceSelector() {
     document.querySelector("#place-selector").style.opacity = 0;
+    document.querySelector("#place-selector").style.pointerEvents = "none";
+}
+
+function updateNavigationArrows() {
+    let previous = document.querySelector("#previous");
+    let next = document.querySelector("#next");
+    if (place == 0 && !transitioning) {
+        previous.style.opacity = 0;
+        previous.style.pointerEvents = "none";
+        next.style.opacity = 1;
+        next.style.pointerEvents = "";
+    } else if (place == places.length-1 && !transitioning) {
+        previous.style.opacity = 1;
+        previous.style.pointerEvents = "";
+        next.style.opacity = 0;
+        next.style.pointerEvents = "none";
+    } else {
+        previous.style.opacity = 1;
+        previous.style.pointerEvents = "";
+        next.style.opacity = 1;
+        next.style.pointerEvents = "";
+    }
 }
 
 function displayDay(day) {
