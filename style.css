@@ -62,9 +62,10 @@ html, body {
     cursor: pointer;
     transition: 320ms;
     scroll-behavior: smooth;
+    text-align: center;
 }
 #place-selector:hover {
-    background-color: #206490;
+    background-color: rgba(32, 100, 144, 0.5);
 }
 #previous-places {
     display: flex;
@@ -74,6 +75,14 @@ html, body {
 
 .place-name, #current-place {
     padding: 0 10px;
+    border-radius: 5px;
+    transition: 200ms;
+}
+/* .place-name {
+    font-weight: normal;
+} */
+.place-name:hover {
+    background-color: rgba(255,255,255,0.2);
 }
 
 

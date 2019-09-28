@@ -5,17 +5,22 @@ showPlaceSelector();
 document.addEventListener("click", function(e) {
     let placeSelector = document.querySelector("#place-selector");
     let previousPlaces = document.querySelector("#previous-places");
+    let currentPlace = document.querySelector("#current-place");
     if (e.target.id == "current-place") {
         placeSelector.style.height = "235px";
         placeSelector.style.overflow = "scroll";
         placeSelector.scrollTo(0, previousPlaces.scrollHeight-100);
-        placeSelector.style.backgroundColor = "#206490"
+        placeSelector.style.backgroundColor = "#206490";
+        currentPlace.style.backgroundColor = "rgba(0,0,0,0.2)";
     } else {
         setTimeout(() => {placeSelector.scrollTo(0, previousPlaces.scrollHeight);}, 50);
         setTimeout(() => {placeSelector.scrollTo(0, previousPlaces.scrollHeight);}, 320);
         placeSelector.style.height = "";
         placeSelector.style.overflow = "hidden";
-        setTimeout(() => {placeSelector.style.backgroundColor = "";}, 200);
+        setTimeout(() => {
+            placeSelector.style.backgroundColor = "";
+            currentPlace.style.backgroundColor = "rgba(0,0,0,0)";
+        }, 300);
     }
 });
 
@@ -30,7 +35,7 @@ function showPlaceSelector() {
     for (i++; i<places.length; i++)
         placeSelector.innerHTML += `<span class="place-name" onclick="jumpToPlace(`+i+`)">`+places[i].name+`</span>`;
     placeSelector.scrollTo(0, document.querySelector("#previous-places").scrollHeight);
-    placeSelector.opacity = 1;
+    placeSelector.style.opacity = "";
 }
 
 function hidePlaceSelector() {
