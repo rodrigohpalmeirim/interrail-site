@@ -27,6 +27,7 @@ function nextPlace() {
         place++;
         skipTransition();
     } else if (place < places.length-1) {
+        hidePlaceSelector();
         hideAnnouncement();
         fastForward(Date.parse(places[place].departure.date+" "+places[place].departure.time.split("+")[0]), Date.parse(places[place+1].arrival.date+" "+places[place+1].arrival.time.split("+")[0]));
         updateMedia(new Date(places[place].departure.date+" "+places[place].departure.time), new Date(places[place+1].arrival.date+" "+places[place+1].arrival.time));
@@ -45,6 +46,7 @@ function nextPlace() {
                 loaded = true;
                 transitionVideo.style.opacity = 0;
                 placeVideo.oncanplay = null;
+                showPlaceSelector();
             };
             reversedTransitionVideo.src = places[place].transitionVideo.split(".")[0] + "-reversed.mp4";
             transitioning = false;
@@ -59,6 +61,7 @@ function previousPlace() {
     if (transitioning) {
         skipTransition();
     } else if (place > 0) {
+        hidePlaceSelector();
         hideAnnouncement();
         fastForward(Date.parse(places[place].arrival.date+" "+places[place].arrival.time.split("+")[0]), Date.parse(places[place-1].arrival.date+" "+places[place-1].arrival.time.split("+")[0]));
         updateMedia(new Date(places[place-1].departure.date+" "+places[place-1].departure.time), new Date(places[place].arrival.date+" "+places[place].arrival.time));
@@ -79,12 +82,32 @@ function previousPlace() {
                 loaded = true;
                 reversedTransitionVideo.style.opacity = 0;
                 placeVideo.oncanplay = null;
+                showPlaceSelector();
             }
             transitionVideo.src = places[place+1].transitionVideo;
             transitioning = false;
             timeouts.push(setTimeout(function() {updateMedia(new Date(places[place].arrival.date+" "+places[place].arrival.time), new Date(places[place].departure.date+" "+places[place].departure.time));}, 500));
         }
     }
+}
+
+function jumpToPlace(placeID) {
+    place = placeID;
+    displayPlaceName(places[place].name);
+    /* placeVideo.play(); */
+    timeouts.push(setTimeout(() => {
+        setClock(Date.parse(places[place].arrival.date+" "+places[place].arrival.time.split("+")[0]));
+        placeVideo.src = places[place].video;
+        loaded = false;
+        placeVideo.oncanplay = function() {
+            loaded = true;
+            placeVideo.oncanplay = null;
+            showPlaceSelector();
+        }
+        updateMedia(new Date(places[place].arrival.date+" "+places[place].arrival.time), new Date(places[place].departure.date+" "+places[place].departure.time));
+        if (place < places.length-1) transitionVideo.src = places[place+1].transitionVideo;
+        if (place > 0) reversedTransitionVideo.src = places[place].transitionVideo.split(".")[0] + "-reversed.mp4";
+    }, 500));
 }
 
 function skipTransition() {
@@ -97,6 +120,7 @@ function skipTransition() {
     placeVideo.oncanplay = function() {
         loaded = true;
         placeVideo.oncanplay = null;
+        showPlaceSelector();
     }
     /* placeVideo.play(); */
     timeouts.push(setTimeout(() => {

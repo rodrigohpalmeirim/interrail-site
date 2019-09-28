@@ -1,4 +1,6 @@
-document.querySelector("#current-place").textContent = places[0].name;
+var place = 0;
+
+showPlaceSelector();
 
 document.addEventListener("click", function(e) {
     let placeSelector = document.querySelector("#place-selector");
@@ -10,15 +12,29 @@ document.addEventListener("click", function(e) {
         placeSelector.style.backgroundColor = "#206490"
     } else {
         setTimeout(() => {placeSelector.scrollTo(0, previousPlaces.scrollHeight);}, 50);
+        setTimeout(() => {placeSelector.scrollTo(0, previousPlaces.scrollHeight);}, 320);
         placeSelector.style.height = "";
         placeSelector.style.overflow = "hidden";
         setTimeout(() => {placeSelector.style.backgroundColor = "";}, 200);
     }
-})
+});
 
-function selectPlace() {
+function showPlaceSelector() {
     let placeSelector = document.querySelector("#place-selector");
-    placeSelector.style.height = "100px";
+    placeSelector.innerHTML = `<div id="previous-places"></div>`;
+    let previousPlaces = document.querySelector("#previous-places");
+    let i = 0;
+    for (; i<place; i++)
+        previousPlaces.innerHTML += `<span class="place-name" onclick="jumpToPlace(`+i+`)">`+places[i].name+`</span>`;
+    placeSelector.innerHTML += `<span id="current-place">`+places[i].name+`</span>`;
+    for (i++; i<places.length; i++)
+        placeSelector.innerHTML += `<span class="place-name" onclick="jumpToPlace(`+i+`)">`+places[i].name+`</span>`;
+    placeSelector.scrollTo(0, document.querySelector("#previous-places").scrollHeight);
+    placeSelector.opacity = 1;
+}
+
+function hidePlaceSelector() {
+    document.querySelector("#place-selector").style.opacity = 0;
 }
 
 function displayDay(day) {
