@@ -3,26 +3,37 @@ var place = 0;
 showPlaceSelector();
 
 document.addEventListener("click", function(e) {
-    let placeSelector = document.querySelector("#place-selector");
-    let previousPlaces = document.querySelector("#previous-places");
-    let currentPlace = document.querySelector("#current-place");
     if (e.target.id == "current-place") {
-        placeSelector.style.height = "235px";
-        placeSelector.style.overflow = "scroll";
-        placeSelector.scrollTo(0, previousPlaces.scrollHeight-100);
-        placeSelector.style.backgroundColor = "#206490";
-        currentPlace.style.backgroundColor = "rgba(0,0,0,0.2)";
+        explandPlaceSelector();
     } else {
-        setTimeout(() => {placeSelector.scrollTo(0, previousPlaces.scrollHeight);}, 50);
-        setTimeout(() => {placeSelector.scrollTo(0, previousPlaces.scrollHeight);}, 320);
-        placeSelector.style.height = "";
-        placeSelector.style.overflow = "hidden";
-        setTimeout(() => {
-            placeSelector.style.backgroundColor = "";
-            currentPlace.style.backgroundColor = "rgba(0,0,0,0)";
-        }, 300);
+        collapsePlaceSelector();
     }
 });
+
+function explandPlaceSelector() {
+    let placeSelector = document.querySelector("#place-selector");
+    let currentPlace = document.querySelector("#current-place");
+    let previousPlaces = document.querySelector("#previous-places");
+    placeSelector.style.height = "235px";
+    placeSelector.style.overflow = "scroll";
+    placeSelector.scrollTo(0, previousPlaces.scrollHeight-100);
+    placeSelector.style.backgroundColor = "#206490";
+    currentPlace.style.backgroundColor = "rgba(0,0,0,0.2)";
+}
+
+function collapsePlaceSelector() {
+    let placeSelector = document.querySelector("#place-selector");
+    let currentPlace = document.querySelector("#current-place");
+    let previousPlaces = document.querySelector("#previous-places");
+    setTimeout(() => {placeSelector.scrollTo(0, previousPlaces.scrollHeight);}, 50);
+    setTimeout(() => {placeSelector.scrollTo(0, previousPlaces.scrollHeight);}, 320);
+    placeSelector.style.height = "";
+    placeSelector.style.overflow = "hidden";
+    setTimeout(() => {
+        placeSelector.style.backgroundColor = "";
+        currentPlace.style.backgroundColor = "rgba(0,0,0,0)";
+    }, 300);
+}
 
 function showPlaceSelector() {
     let placeSelector = document.querySelector("#place-selector");
