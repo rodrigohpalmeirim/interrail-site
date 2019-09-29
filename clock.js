@@ -24,7 +24,7 @@ function setClock(millis) {
     document.querySelector(".day").textContent = "Day "+ (date.getDate() - 6);
 }
 
-var date, endDate, startMillis, endMillis, iterMillis, day, clockInterval, clockPaused = true;
+var date, endDate, startMillis, endMillis, iterMillis, day, clockInterval, clockPaused = false;
 function fastForward(_startMillis, _endMillis) {
     startMillis = _startMillis;
     endMillis = _endMillis;
@@ -67,5 +67,6 @@ function clockTick() {
     if ((date - endDate) * (endMillis - startMillis) >= 0) {
         clearInterval(clockInterval);
         setClock(endDate);
+        clockPaused = false;
     }
 }
