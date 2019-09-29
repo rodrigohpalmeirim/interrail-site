@@ -24,32 +24,48 @@ function setClock(millis) {
     document.querySelector(".day").textContent = "Day "+ (date.getDate() - 6);
 }
 
-function fastForward(startMillis, endMillis) {
-    let date = new Date(startMillis);
-    let endDate = new Date(endMillis);
-    let iterMillis = (endMillis-startMillis) / 100;
-    var day = date.getDate();
-
+var date, endDate, startMillis, endMillis, iterMillis, day, clockInterval, clockPaused = true;
+function fastForward(_startMillis, _endMillis) {
+    startMillis = _startMillis;
+    endMillis = _endMillis;
+    date = new Date(startMillis);
+    endDate = new Date(endMillis);
+    iterMillis = (endMillis-startMillis) / 100;
+    day = date.getDate();
     clearInterval(clockInterval);
+    clockInterval = setInterval(clockTick, 50);
+    clockPaused = false;
+}
 
-    clockInterval = setInterval(function f() {
-        setClock(date);
-        date = new Date(date.getTime() + iterMillis);
-        if (date.getDate() > day) {
-            displayDay(date.getDate() - 6);
-            day = date.getDate();
-            timeouts.push(setTimeout(() => {
-                transitionVideo.pause();
-                clearInterval(clockInterval);
-            }, 500));
-            timeouts.push(setTimeout(() => {
-                clockInterval = setInterval(f, 50);
-                transitionVideo.play()
-            }, 2000));
-        }
-        if ((date - endDate) * (endMillis - startMillis) >= 0) {
+function pauseClock() {
+    clearInterval(clockInterval);
+    clockPaused = true;
+}
+
+function resumeClock() {
+    if (clockPaused) {
+        clockInterval = setInterval(clockTick, 50);
+        clockPaused = false;
+    }
+}
+
+function clockTick() {
+    setClock(date);
+    date = new Date(date.getTime() + iterMillis);
+    if (date.getDate() > day) {
+        displayDay(date.getDate() - 6);
+        day = date.getDate();
+        timeouts.push(setTimeout(() => {
+            transitionVideo.pause();
             clearInterval(clockInterval);
-            setClock(endDate);
-        }
-    }, 50);
+        }, 500));
+        timeouts.push(setTimeout(() => {
+            clockInterval = setInterval(clockTick, 50);
+            transitionVideo.play()
+        }, 2000));
+    }
+    if ((date - endDate) * (endMillis - startMillis) >= 0) {
+        clearInterval(clockInterval);
+        setClock(endDate);
+    }
 }
