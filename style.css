@@ -1,13 +1,10 @@
 @import url('https://rsms.me/inter/inter.css');
 
-/* Always set the map height explicitly to define the size of the div
-* element that contains the map. */
-#map {
-    display: none;
-    height: 100%;
-    z-index: 100;
+* {
+    user-select: none;
+    -webkit-user-drag: none;
 }
-/* Optional: Makes the sample page fill the window. */
+
 html, body {
     height: 100%;
     margin: 0;
@@ -15,7 +12,14 @@ html, body {
     overflow: hidden;
     font-family: "Product Sans";
     color: white;
-    user-select: none;
+}
+
+/* Always set the map height explicitly to define the size of the div
+* element that contains the map. */
+#map {
+    display: none;
+    height: 100%;
+    z-index: 100;
 }
 
 .earth {
@@ -160,6 +164,17 @@ html, body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: 200ms;
+}
+
+#cross {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    height: 30px;
+    cursor: pointer;
     opacity: 0;
     transition: 200ms;
 }
