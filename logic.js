@@ -136,9 +136,9 @@ function skipTransition() {
         reversedTransitionVideo.style.opacity = 0;
         if (place < places.length-1) transitionVideo.src = places[place+1].transitionVideo;
         if (place > 0) reversedTransitionVideo.src = places[place].transitionVideo.split(".")[0] + "-reversed.mp4";
+        displayPlaceName(places[place].name);
     }, 500));
     transitioning = false;
-    displayPlaceName(places[place].name);
 }
 
 function clearTimeouts() {
