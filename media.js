@@ -1,5 +1,17 @@
+var pausedVideo;
+
 function big(src, type) {
     document.getElementById("media-viewer").style.display = "block";
+    if (transitioning) {
+        pauseClock();
+        if (pausedVideo == null && !transitionVideo.paused) {
+            transitionVideo.pause();
+            pausedVideo = transitionVideo;
+        } else if (pausedVideo == null && !reversedTransitionVideo.paused) {
+            reversedTransitionVideo.pause();
+            pausedVideo = reversedTransitionVideo;
+        }
+    }
     setTimeout(() => {document.getElementById("media-viewer").style.opacity = 1;}, 1);
     if (type == "photo") {
         document.getElementById("big-video").src = "";
@@ -18,6 +30,11 @@ function big(src, type) {
     document.onkeydown = function (e) {
         e = e || window.event;
         if (e.key == "Escape") {
+            if (clockPaused) resumeClock();
+            if (pausedVideo != null) {
+                pausedVideo.play();
+                pausedVideo = null;
+            }
             document.getElementById("big-photo").src = "";
             document.getElementById("big-video").src = "";
             document.getElementById("media-viewer").style.opacity = 0;
