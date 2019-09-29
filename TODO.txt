@@ -6,9 +6,4 @@ fix small screen issues
 add place announcement colors
 center things to accomodate media pane
 add panoramas
-rerender lisbon-airport.mp4 (fix loop gap)
-rerender path-to-luxembourg-gardens.mp4 (improve path)
-rerender paris-orly-airport.mp4 (improve lighting)
-rerender eiffel-tower.mp4 (weather and zoom)
-rerender triomphe-arch.mp4 (weather)
 add portuguese translation
