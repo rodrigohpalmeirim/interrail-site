@@ -19,6 +19,7 @@ function expandPlaceSelector() {
     placeSelector.scrollTo(0, previousPlaces.scrollHeight-100);
     placeSelector.style.backgroundColor = "#206490";
     currentPlace.style.backgroundColor = "rgba(0,0,0,0.2)";
+    currentPlace.innerHTML = currentPlace.innerHTML.replace(" ▾", "");
 }
 
 function collapsePlaceSelector() {
@@ -32,6 +33,7 @@ function collapsePlaceSelector() {
     setTimeout(() => {
         placeSelector.style.backgroundColor = "";
         currentPlace.style.backgroundColor = "rgba(0,0,0,0)";
+        currentPlace.innerHTML += currentPlace.innerHTML.indexOf(" ▾")>=0 ? "" : " ▾";
     }, 300);
 }
 
@@ -42,7 +44,7 @@ function showPlaceSelector() {
     let i = 0;
     for (; i<place; i++)
         previousPlaces.innerHTML += `<span class="place-name" onclick="jumpToPlace(`+i+`)">`+places[i].name+`</span>`;
-    placeSelector.innerHTML += `<span id="current-place">`+places[i].name+`</span>`;
+    placeSelector.innerHTML += `<span id="current-place">`+places[i].name+` ▾</span>`;
     for (i++; i<places.length; i++)
         placeSelector.innerHTML += `<span class="place-name" onclick="jumpToPlace(`+i+`)">`+places[i].name+`</span>`;
     placeSelector.scrollTo(0, document.querySelector("#previous-places").scrollHeight);
