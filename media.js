@@ -80,9 +80,9 @@ function updateMedia(startDate, endDate) {
     for (let i=0; i<points.length && (new Date(points[i].date+" "+points[i].time)<endDate); i++) {
         if (new Date(points[i].date+" "+points[i].time)>startDate) {
             if (points[i].type == "photo")
-                media.innerHTML += `<img class="thumbnail" src="`+"media/"+points[i].file+`" onclick="showMediaViewer('`+"media/"+points[i].file+`', 'photo')">`;
+                media.innerHTML += `<div style="--w: `+points[i].width+`; --h: `+points[i].height+`"><img class="thumbnail" src="`+"media/"+points[i].file+`" onclick="showMediaViewer('`+"media/"+points[i].file+`', 'photo')"></div>`;
             else if (points[i].type == "video")
-                media.innerHTML += `<div style="position: relative"><video class="thumbnail" src="`+"media/"+points[i].file+`" onclick="showMediaViewer('`+"media/"+points[i].file+`', 'video')"></video><img class="play-button" src="icons/play-button.png"></div>`;
+                media.innerHTML += `<div style="--w: `+points[i].width+`; --h: `+points[i].height+`; position: relative;"><video class="thumbnail" src="`+"media/"+points[i].file+`" onclick="showMediaViewer('`+"media/"+points[i].file+`', 'video')"></video><img class="play-button" src="icons/play-button.png"></div>`;
         }
     }
     if (media.childElementCount == 0) {

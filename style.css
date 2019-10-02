@@ -123,14 +123,26 @@ html, body {
 
 #media {
     padding: 20px;
-    line-height: 0;
-    column-count: 2;
-    column-gap: 0px;
+    display: flex;
+    flex-wrap: wrap;
 }
-
+#media > div, #media::after {
+    --ratio: calc(var(--w) / var(--h));
+    --row-height: 9rem;
+    flex-basis: calc(var(--ratio) * var(--row-height));
+}
+#media > div {
+    margin: 0px 0.25rem 0.25rem 0.25rem;
+    flex-grow: calc(var(--ratio) * 100);
+}
+#media::after {
+    --w: 2;
+    --h: 1;
+    content: '';
+    flex-grow: 1000000;
+}
 .thumbnail {
     width: 100%;
-    height: auto !important;
     cursor: pointer;
 }
 
