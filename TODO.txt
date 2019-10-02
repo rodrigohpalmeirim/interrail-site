@@ -6,4 +6,5 @@ fix small screen issues
 add place announcement colors
 center things to accomodate media pane
 add panoramas
+filter photos
 add portuguese translation
