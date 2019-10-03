@@ -1,4 +1,5 @@
 @import url('https://rsms.me/inter/inter.css');
+@import url('https://fonts.googleapis.com/css?family=Cabin+Sketch&display=swap');
 
 * {
     user-select: none;
@@ -12,6 +13,70 @@ html, body {
     overflow: hidden;
     font-family: "Product Sans";
     color: white;
+}
+
+#title-screen {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #206490;
+}
+
+#card-container {
+    display: flex;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    position: relative;
+    margin: 30px;
+    background-color: #1f273c;
+    border-radius: 20px;
+    height: 300px;
+    width: 240px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+#tour-card {
+    transform: scale(1.2);
+}
+#tour-card:hover {
+    transform: scale(1.25);
+}
+
+.card-icon {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 65%;
+}
+.card-icon[src="icons/binoculars-icon.png"] {
+    opacity: 0.8;
+}
+
+.card-title {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3.5rem;
+    font-family: "Cabin Sketch";
+    opacity: 0.8;
+}
+
+#tour {
+    display: none;
 }
 
 /* Always set the map height explicitly to define the size of the div
@@ -299,9 +364,9 @@ html, body {
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
-  }
-  
-  .cube1, .cube2 {
+}
+
+.cube1, .cube2 {
     background-color: white;
     width: 15px;
     height: 15px;
@@ -311,35 +376,35 @@ html, body {
     
     -webkit-animation: sk-cubemove 1.8s infinite ease-in-out;
     animation: sk-cubemove 1.8s infinite ease-in-out;
-  }
-  
-  .cube2 {
+}
+
+.cube2 {
     -webkit-animation-delay: -0.9s;
     animation-delay: -0.9s;
-  }
-  
-  @-webkit-keyframes sk-cubemove {
+}
+
+@-webkit-keyframes sk-cubemove {
     25% { -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5) }
     50% { -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg) }
     75% { -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5) }
     100% { -webkit-transform: rotate(-360deg) }
-  }
-  
-  @keyframes sk-cubemove {
+}
+
+@keyframes sk-cubemove {
     25% { 
-      transform: translateX(42px) rotate(-90deg) scale(0.5);
-      -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5);
+    transform: translateX(42px) rotate(-90deg) scale(0.5);
+    -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5);
     } 50% { 
-      transform: translateX(42px) translateY(42px) rotate(-179deg);
-      -webkit-transform: translateX(42px) translateY(42px) rotate(-179deg);
+    transform: translateX(42px) translateY(42px) rotate(-179deg);
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-179deg);
     } 50.1% { 
-      transform: translateX(42px) translateY(42px) rotate(-180deg);
-      -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
+    transform: translateX(42px) translateY(42px) rotate(-180deg);
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
     } 75% { 
-      transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
-      -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+    transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+    -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
     } 100% { 
-      transform: rotate(-360deg);
-      -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
     }
-  }
+}

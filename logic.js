@@ -5,11 +5,18 @@ var transitioning = false;
 var loaded = true;
 var timeouts = [];
 
-setClock(Date.parse(places[place].arrival.date+" "+places[place].arrival.time))
-updateMedia(new Date(places[place].arrival.date+" "+places[place].arrival.time), new Date(places[place].departure.date+" "+places[place].departure.time));
-updateNavigationArrows();
 
-placeVideo.addEventListener("canplay", function() {placeVideo.play();});
+function startTour() {
+    
+    setClock(Date.parse(places[place].arrival.date+" "+places[place].arrival.time));
+    updateMedia(new Date(places[place].arrival.date+" "+places[place].arrival.time), new Date(places[place].departure.date+" "+places[place].departure.time));
+    updateNavigationArrows();
+    
+    displayDay(1);
+    setTimeout(() => {document.querySelector("#tour").style.display = "block"}, 500);
+    setTimeout(() => {displayPlaceName(places[place].name)}, 2500);
+    /* placeVideo.addEventListener("canplay", function() {placeVideo.play();}); */
+}
 
 function arrowKeyControl() {
     document.onkeydown = function(e) {
