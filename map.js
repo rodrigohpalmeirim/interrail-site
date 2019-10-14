@@ -1,9 +1,12 @@
 var map;
 
+function showMap() {
+    document.querySelector("#map").style.display = "block";
+}
+
 function initMap() {
     var home = { lat: 38.761012, lng: -9.164653 };
     var markers = [];
-    var positions = [];
     var lines = [];
 
     var colors = { walking: "#0066cc", other: "#f92672" };
@@ -30,34 +33,31 @@ function initMap() {
             map: map
         });
     } */
-
-    for (let i = 0; i < points.length - 1; i++) {
-        if (points[i].coordinates)
-            positions.push(points[i])
-    }
     
-    for (let i = 0; i < positions.length - 1; i++) {
-        if (positions[i].coordinates)
-        var interval = (Date.parse(positions[i + 1].date + " " + positions[i + 1].time) - Date.parse(positions[i].date + " " + positions[i].time)) / 1000; // seconds
-        var distance = google.maps.geometry.spherical.computeDistanceBetween(new google.maps.LatLng(positions[i].coordinates), new google.maps.LatLng(positions[i + 1].coordinates)); //meters
-        var speed = (distance / 1000) / (interval / 3600); // km/h
-
-        addLine([positions[i].coordinates, positions[i + 1].coordinates], map, (speed < 7) ? colors["walking"] : colors["other"], (interval < 3600) ? 1 : 0.3);
-
-        addMarker(positions[i].coordinates, null, positions[i].type);
-
-        markers[i].addListener('click', function () {
-            infowindow = new google.maps.InfoWindow({
-                content: positions[i].date + " " + positions[i].time
+    for (let i = 0; i < points.length - 1; i++) {
+        if (points[i].coordinates) {
+            var interval = (Date.parse(points[i + 1].date + " " + points[i + 1].time) - Date.parse(points[i].date + " " + points[i].time)) / 1000; // seconds
+            var distance = google.maps.geometry.spherical.computeDistanceBetween(new google.maps.LatLng(points[i].coordinates), new google.maps.LatLng(points[i + 1].coordinates)); //meters
+            var speed = (distance / 1000) / (interval / 3600); // km/h
+    
+            addLine([points[i].coordinates, points[i + 1].coordinates], map, (speed < 7) ? colors["walking"] : colors["other"], (interval < 3600) ? 1 : 0.3);
+    
+            addMarker(points[i].coordinates, null, points[i].type);
+    
+            markers[i].addListener('click', function () {
+                console.log(points[i].date + " " + points[i].time);
+                let infowindow = new google.maps.InfoWindow({
+                    content: points[i].date + " " + points[i].time
+                });
+                infowindow.open(map, markers[i]);
             });
-            infowindow.open(map, markers[i]);
-        });
+        }
     }
 
-    var j = 0;
+    /* var j = 0;
     map.addListener('click', function () {
         smoothlyAnimatePanTo(map, new google.maps.LatLng(places[j++].coordinates), 15)
-    });
+    }); */
 
 
     /* Functions */
@@ -72,9 +72,9 @@ function initMap() {
         markers.push(marker);
     }
 
-    function addLine(positions, map, color, opacity) {
+    function addLine(points, map, color, opacity) {
         var line = new google.maps.Polyline({
-            path: positions,
+            path: points,
             geodesic: true,
             strokeColor: color,
             strokeOpacity: opacity,
@@ -95,12 +95,12 @@ function initMap() {
         }
     });
 
-    /* for (var i=0; i<photos.length; i++) {
-        if (photos[i].coordinates) {
-            photos[i].coordinates = ParseDMS(photos[i].coordinates.lat + " " + photos[i].coordinates.lng);
+    /* for (var i=0; i<missingPoints.length; i++) {
+        if (missingPoints[i].coordinates) {
+            missingPoints[i].coordinates = ParseDMS(missingPoints[i].coordinates.lat + " " + missingPoints[i].coordinates.lng);
         }
     }
-    console.log(JSON.stringify(photos))
+    console.log(JSON.stringify(missingPoints))
 
     function ParseDMS(input) {
         var parts = input.split(/\s+/);
