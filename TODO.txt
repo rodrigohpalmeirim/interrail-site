@@ -1,10 +1,11 @@
+add media viewer keyboard controls
+add place selector colors
 fix place selector closing bug
-add exit photo viewer
 fix clock hands misaligned
 fix animation canceling
 fix small screen issues
-add place announcement colors
 center things to accomodate media pane
 add panoramas
 filter photos
 add portuguese translation
+add phone incompatibility message
