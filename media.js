@@ -104,12 +104,12 @@ function updateMedia(startDate, endDate) {
             if (mediaItems[i].type == "photo")
                 media.innerHTML += `
                     <div style="--w: `+mediaItems[i].width+`; --h: `+mediaItems[i].height+`">
-                        <img class="thumbnail" src="`+"media/"+mediaItems[i].file+`" onclick="showMediaViewer('`+"media/"+mediaItems[i].file+`', 'photo')">
+                        <img class="thumbnail" src="`+"media/thumbnails/"+mediaItems[i].file+`" onclick="showMediaViewer('`+"media/"+mediaItems[i].file+`', 'photo')">
                     </div>`;
             else if (mediaItems[i].type == "video")
                 media.innerHTML += `
                     <div style="--w: `+mediaItems[i].width+`; --h: `+mediaItems[i].height+`; position: relative;">
-                        <video class="thumbnail" src="`+"media/"+mediaItems[i].file+`" onclick="showMediaViewer('`+"media/"+mediaItems[i].file+`', 'video')"></video><img class="play-button" src="icons/play-button.png">
+                        <img class="thumbnail" src="`+"media/thumbnails/"+mediaItems[i].file.replace("mp4", "jpg")+`" onclick="showMediaViewer('`+"media/"+mediaItems[i].file+`', 'video')"><img class="play-button" src="icons/play-button.png">
                     </div>`;
         }
     }
