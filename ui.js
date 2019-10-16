@@ -2,6 +2,13 @@ var place = 0;
 
 showPlaceSelector();
 
+var colors = {
+    "night": "#1f273c",
+    "blue": "#206490",
+    "green": "#20904d",
+}
+
+
 document.addEventListener("click", function(e) {
     if (e.target.id == "current-place") {
         expandPlaceSelector();
@@ -17,7 +24,7 @@ function expandPlaceSelector() {
     placeSelector.style.height = "235px";
     placeSelector.style.overflow = "scroll";
     placeSelector.scrollTo(0, previousPlaces.scrollHeight-100);
-    placeSelector.style.backgroundColor = "#206490";
+    placeSelector.style.backgroundColor = colors["blue"];
     currentPlace.style.backgroundColor = "rgba(0,0,0,0.2)";
     currentPlace.innerHTML = currentPlace.innerHTML.replace(" ▾", "");
 }
@@ -84,7 +91,7 @@ function displayDay(day) {
     
     document.querySelector(".ml1").style.opacity = 1;
     announcement.style.display = "block";
-    announcement.style.backgroundColor = "#1f273c";
+    announcement.style.backgroundColor = colors["night"];
     text.textContent = "DAY " + day;
     let textWrapper = document.querySelector('.ml1 .letters');
     textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>"); // Wrap every letter in a span
@@ -109,61 +116,67 @@ function displayDay(day) {
                 duration: 700,
                 offset: '-=875',
                 delay: (el, i, l) => 80 * (l - i)
-            })/* .add({
+            }).add({
                 targets: '.ml1',
                 opacity: 0,
-                duration: 1000,
+                duration: 800,
                 easing: "easeOutExpo",
-                delay: 1000
-            }) */;
+                delay: 1200
+            });
     }, 500));
 
     timeouts.push(setTimeout(() => {hideAnnouncement();}, 2500));
 }
 
-function displayPlaceName(name) {
+function displayPlaceName(place) {
     let text = document.querySelector("#place-name");
     let announcement = document.querySelector("#announcement");
 
+    clearTimeouts();
+
     document.querySelector(".ml11").style.opacity = 1;
     announcement.style.display = "block";
-    announcement.style.backgroundColor = "#206490";
-    document.querySelector(".spinner").style.opacity = 1;
-    text.textContent = name;
+    announcement.style.backgroundColor = colors[place.color];
+    /* document.querySelector(".spinner").style.opacity = 1; */
+    text.textContent = place.name;
 
     setTimeout(() => {announcement.style.opacity = 1;}, 50);
 
     var textWrapper = document.querySelector('.ml11 .letters');
     textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"); // Wrap every letter in a span
 
-    timeouts.push(setTimeout(() => {
-        anime.timeline({})
-            .add({
-                targets: '.ml11 .line',
-                scaleY: [0,1],
-                opacity: [0.5,1],
-                easing: "easeOutExpo",
-                duration: 700
-            }).add({
-                targets: '.ml11 .line',
-                translateX: [0, document.querySelector('.ml11 .letters').getBoundingClientRect().width + 10],
-                easing: "easeOutExpo",
-                duration: 700,
-                delay: 100
-            }).add({
-                targets: '.ml11 .letter',
-                opacity: [0,1],
-                easing: "easeOutExpo",
-                duration: 600,
-                offset: '-=775',
-                delay: (el, i) => 30 * (i+1)
-            }).add({
-                targets: '.ml11 .line',
-                opacity: 0,
-                duration: 700,
-                easing: "easeOutExpo"
-            });
-        }, 500));
+    anime.timeline({})
+        .add({
+            targets: '.spinner',
+            opacity: [0,1],
+            duration: 500,
+            easing: "easeInExpo"
+        }).add({
+            targets: '.ml11 .line',
+            scaleY: [0,1],
+            opacity: [0.5,1],
+            easing: "easeOutExpo",
+            duration: 700,
+            delay: 500
+        }).add({
+            targets: '.ml11 .line',
+            translateX: [0, document.querySelector('.ml11 .letters').getBoundingClientRect().width + 10],
+            easing: "easeOutExpo",
+            duration: 700,
+            delay: 100
+        }).add({
+            targets: '.ml11 .letter',
+            opacity: [0,1],
+            easing: "easeOutExpo",
+            duration: 600,
+            offset: '-=775',
+            delay: (el, i) => 30 * (i+1)
+        }).add({
+            targets: '.ml11 .line',
+            opacity: 0,
+            duration: 700,
+            easing: "easeOutExpo"
+        });
         
         timeouts.push(setTimeout(() => {
             if (loaded) {
