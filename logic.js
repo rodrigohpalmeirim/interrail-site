@@ -5,7 +5,6 @@ var transitioning = false;
 var loaded = true;
 var timeouts = [];
 
-
 function startTour() {
     
     setClock(Date.parse(places[place].arrival.date+" "+places[place].arrival.time));
@@ -13,8 +12,11 @@ function startTour() {
     updateNavigationArrows();
     
     displayDay(1);
-    setTimeout(() => {document.querySelector("#tour").style.display = "block"}, 500);
-    setTimeout(() => {displayPlaceName(places[place].name)}, 2500);
+    setTimeout(() => {
+        document.querySelector("#tour").style.display = "block";
+        clearTimeouts();
+    }, 500);
+    setTimeout(() => {displayPlaceName(places[place])}, 2800);
     /* placeVideo.addEventListener("canplay", function() {placeVideo.play();}); */
 }
 
@@ -49,7 +51,7 @@ function nextPlace() {
         transitionVideo.onended = function() {
             place++;
             loaded = false;
-            displayPlaceName(places[place].name);
+            displayPlaceName(places[place]);
             /* placeVideo.play(); */
             placeVideo.src = places[place].video;
             if (place < places.length-1) timeouts.push(setTimeout(() => {transitionVideo.src = places[place+1].transitionVideo;}, 500));
@@ -85,7 +87,7 @@ function previousPlace() {
         reversedTransitionVideo.onended = function() {
             /* placeVideo.play(); */
             placeVideo.src = places[place].video;
-            displayPlaceName(places[place].name);
+            displayPlaceName(places[place]);
             loaded = false;
             if (place > 0) timeouts.push(setTimeout(() => {
                 reversedTransitionVideo.src = places[place].transitionVideo.split(".")[0] + "-reversed.mp4";
@@ -105,7 +107,7 @@ function previousPlace() {
 
 function jumpToPlace(placeID) {
     place = placeID;
-    displayPlaceName(places[place].name);
+    displayPlaceName(places[place]);
     /* placeVideo.play(); */
     timeouts.push(setTimeout(() => {
         updateNavigationArrows();
@@ -143,7 +145,7 @@ function skipTransition() {
         reversedTransitionVideo.style.opacity = 0;
         if (place < places.length-1) transitionVideo.src = places[place+1].transitionVideo;
         if (place > 0) reversedTransitionVideo.src = places[place].transitionVideo.split(".")[0] + "-reversed.mp4";
-        displayPlaceName(places[place].name);
+        displayPlaceName(places[place]);
     }, 500));
     transitioning = false;
 }
