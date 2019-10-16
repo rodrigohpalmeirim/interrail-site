@@ -1,10 +1,38 @@
 var pausedVideo;
+var temp;
+function showGallery() {
+    let media = document.querySelector("#gallery .media");
+
+    document.querySelector("#media-viewer").style.width = "100%";
+
+    document.querySelector("#gallery").style.display = "block";
+    setTimeout(() => {document.querySelector("#gallery").style.opacity = 1;}, 10);
+
+    media.innerHTML = galleryMedia;
+    lazyload();
+    /* let i = 0;
+    temp = setInterval(() => {
+        if (mediaItems[i].type == "photo")
+            media.innerHTML += `
+                <div style="--w: `+mediaItems[i].width+`; --h: `+mediaItems[i].height+`">
+                    <img class="lazyload thumbnail" data-src="`+"media/thumbnails/"+mediaItems[i].file+`" onclick="showMediaViewer('`+"media/"+mediaItems[i].file+`', 'photo')">
+                </div>`;
+        else if (mediaItems[i].type == "video")
+            media.innerHTML += `
+                <div style="--w: `+mediaItems[i].width+`; --h: `+mediaItems[i].height+`; position: relative;">
+                    <img class="lazyload thumbnail" data-src="`+"media/thumbnails/"+mediaItems[i].file.replace(".mp4", ".jpg")+`" onclick="showMediaViewer('`+"media/"+mediaItems[i].file+`', 'video')"><img class="play-button" src="icons/play-button.png">
+                </div>`;
+        if (i++ + 1 >= mediaItems.length) {
+            clearInterval(temp);
+            lazyload();
+        }
+    }, 0); */
+}
 
 function showMediaViewer(src, type) {
     let mediaViewer = document.getElementById("media-viewer");
     let bigVideo = document.getElementById("big-video");
     let bigPhoto = document.getElementById("big-photo");
-    let cross = document.getElementById("cross");
 
     mediaViewer.style.display = "block";
     if (transitioning) {
@@ -17,9 +45,7 @@ function showMediaViewer(src, type) {
             pausedVideo = reversedTransitionVideo;
         }
     }
-    cross.style.display = "block";
     setTimeout(() => {
-        cross.style.opacity = 1;
         mediaViewer.style.opacity = 1;
     }, 1);
     if (type == "photo") {
@@ -48,7 +74,6 @@ function hideMediaViewer() {
     let mediaViewer = document.getElementById("media-viewer");
     let bigVideo = document.getElementById("big-video");
     let bigPhoto = document.getElementById("big-photo");
-    let cross = document.getElementById("cross");
 
     if (clockPaused) resumeClock();
         if (pausedVideo != null) {
@@ -60,29 +85,32 @@ function hideMediaViewer() {
         mediaViewer.style.opacity = 0;
         bigPhoto.style.opacity = 0;
         bigVideo.style.opacity = 0;
-        cross.style.opacity = 0;
         setTimeout(() => {
             mediaViewer.style.display = "none";
             bigPhoto.style.display = "none";
             bigVideo.style.display = "none";
-            cross.style.display = "none";
         }, 200);
         arrowKeyControl();
 }
 
 function updateMedia(startDate, endDate) {
-    let media = document.querySelector("#media");
+    let media = document.querySelector("#media-pane .media");
     let mediaPane = document.querySelector("#media-pane");
     let mediaViewer = document.querySelector("#media-viewer");
     let next = document.querySelector("#next");
-    let cross = document.querySelector("#cross");
     media.innerHTML = "";
-    for (let i=0; i<points.length && (new Date(points[i].date+" "+points[i].time)<endDate); i++) {
-        if (new Date(points[i].date+" "+points[i].time)>startDate) {
-            if (points[i].type == "photo")
-                media.innerHTML += `<div style="--w: `+points[i].width+`; --h: `+points[i].height+`"><img class="thumbnail" src="`+"media/"+points[i].file+`" onclick="showMediaViewer('`+"media/"+points[i].file+`', 'photo')"></div>`;
-            else if (points[i].type == "video")
-                media.innerHTML += `<div style="--w: `+points[i].width+`; --h: `+points[i].height+`; position: relative;"><video class="thumbnail" src="`+"media/"+points[i].file+`" onclick="showMediaViewer('`+"media/"+points[i].file+`', 'video')"></video><img class="play-button" src="icons/play-button.png"></div>`;
+    for (let i=0; i<mediaItems.length && (new Date(mediaItems[i].date+" "+mediaItems[i].time)<endDate); i++) {
+        if (new Date(mediaItems[i].date+" "+mediaItems[i].time)>startDate) {
+            if (mediaItems[i].type == "photo")
+                media.innerHTML += `
+                    <div style="--w: `+mediaItems[i].width+`; --h: `+mediaItems[i].height+`">
+                        <img class="thumbnail" src="`+"media/"+mediaItems[i].file+`" onclick="showMediaViewer('`+"media/"+mediaItems[i].file+`', 'photo')">
+                    </div>`;
+            else if (mediaItems[i].type == "video")
+                media.innerHTML += `
+                    <div style="--w: `+mediaItems[i].width+`; --h: `+mediaItems[i].height+`; position: relative;">
+                        <video class="thumbnail" src="`+"media/"+mediaItems[i].file+`" onclick="showMediaViewer('`+"media/"+mediaItems[i].file+`', 'video')"></video><img class="play-button" src="icons/play-button.png">
+                    </div>`;
         }
     }
     if (media.childElementCount == 0) {
@@ -91,13 +119,11 @@ function updateMedia(startDate, endDate) {
     } else if (media.childElementCount < 5) {
         mediaPane.style.width = "15%";
         next.style.right = "16%";
-        cross.style.right = "16%"
         mediaViewer.style.width = "85%";
         media.style.columnCount = 1;
     } else {
         mediaPane.style.width = "30%";
         next.style.right = "31%";
-        cross.style.right = "31%";
         mediaViewer.style.width = "70%";
         media.style.columnCount = 2;
     }

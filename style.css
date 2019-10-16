@@ -75,6 +75,17 @@ html, body {
     opacity: 0.8;
 }
 
+#gallery {
+    display: none;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #1f273c;
+    overflow: scroll;
+    opacity: 0;
+    transition: 0.5s;
+}
+
 #tour {
     display: none;
 }
@@ -84,7 +95,6 @@ html, body {
 #map {
     display: none;
     height: 100%;
-    z-index: 100;
 }
 
 .earth {
@@ -186,21 +196,21 @@ html, body {
     display: none;
 }
 
-#media {
+.media {
     padding: 20px;
     display: flex;
     flex-wrap: wrap;
 }
-#media > div, #media::after {
+.media > div, .media::after {
     --ratio: calc(var(--w) / var(--h));
     --row-height: 9rem;
     flex-basis: calc(var(--ratio) * var(--row-height));
 }
-#media > div {
+.media > div {
     margin: 0px 0.25rem 0.25rem 0.25rem;
     flex-grow: calc(var(--ratio) * 100);
 }
-#media::after {
+.media::after {
     --w: 2;
     --h: 1;
     content: '';
@@ -212,7 +222,7 @@ html, body {
 }
 
 .play-button {
-    width: 25%;
+    width: 60px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -231,6 +241,7 @@ html, body {
     background-color: rgba(0,0,0,0.7);
     opacity: 0;
     transition: 200ms;
+    z-index: 10;
 }
 
 #big-photo, #big-video {
@@ -246,14 +257,11 @@ html, body {
 }
 
 #cross {
-    display: none;
     position: absolute;
     top: 20px;
     right: 20px;
     height: 30px;
     cursor: pointer;
-    opacity: 0;
-    transition: 200ms;
 }
 
 #announcement {
@@ -263,6 +271,7 @@ html, body {
     height: 100%;
     opacity: 0;
     transition: opacity 500ms;
+    z-index: 11;
 }
 
 /* #day-text {
