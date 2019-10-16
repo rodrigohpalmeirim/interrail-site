@@ -1,5 +1,4 @@
 add media viewer keyboard controls
-add place selector colors
 fix place selector closing bug
 fix clock hands misaligned
 fix animation canceling

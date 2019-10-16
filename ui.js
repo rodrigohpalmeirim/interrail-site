@@ -1,12 +1,12 @@
 var place = 0;
 
-showPlaceSelector();
-
 var colors = {
     "night": "#1f273c",
     "blue": "#206490",
     "green": "#20904d",
 }
+
+showPlaceSelector();
 
 
 document.addEventListener("click", function(e) {
@@ -24,7 +24,7 @@ function expandPlaceSelector() {
     placeSelector.style.height = "235px";
     placeSelector.style.overflow = "scroll";
     placeSelector.scrollTo(0, previousPlaces.scrollHeight-100);
-    placeSelector.style.backgroundColor = colors["blue"];
+    placeSelector.style.backgroundColor = colors[places[place].color];
     currentPlace.style.backgroundColor = "rgba(0,0,0,0.2)";
     currentPlace.innerHTML = currentPlace.innerHTML.replace(" ▾", "");
 }
@@ -47,6 +47,7 @@ function collapsePlaceSelector() {
 function showPlaceSelector() {
     let placeSelector = document.querySelector("#place-selector");
     placeSelector.innerHTML = `<div id="previous-places"></div>`;
+    placeSelector.className = places[place].color;
     let previousPlaces = document.querySelector("#previous-places");
     let i = 0;
     for (; i<place; i++)

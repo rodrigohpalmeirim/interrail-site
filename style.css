@@ -143,8 +143,14 @@ html, body {
     scroll-behavior: smooth;
     text-align: center;
 }
-#place-selector:hover {
+.blue:hover {
     background-color: rgba(32, 100, 144, 0.5);
+}
+.green:hover {
+    background-color: rgba(32, 144, 77, 0.5);
+}
+.night:hover {
+    background-color: rgba(31, 39, 60, 0.5);
 }
 #previous-places {
     display: flex;
@@ -157,9 +163,6 @@ html, body {
     border-radius: 5px;
     transition: 200ms;
 }
-/* .place-name {
-    font-weight: normal;
-} */
 .place-name:hover {
     background-color: rgba(255,255,255,0.2);
 }
