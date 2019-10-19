@@ -1,5 +1,6 @@
 @import url('https://rsms.me/inter/inter.css');
 @import url('https://fonts.googleapis.com/css?family=Cabin+Sketch&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Caveat+Brush&display=swap');
 
 * {
     user-select: none;
@@ -20,6 +21,24 @@ html, body {
     height: 100%;
     width: 100%;
     background-color: #206490;
+}
+
+#title {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 150px;
+    font-family: "Caveat Brush";
+}
+
+#title-date {
+    position: absolute;
+    top: 37%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 100px;
+    font-family: "Caveat Brush";
 }
 
 #card-container {
