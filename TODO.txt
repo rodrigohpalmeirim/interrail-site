@@ -1,3 +1,5 @@
+add fav icon
+add return to title screen button
 add media viewer keyboard controls
 fix place selector closing bug
 fix clock hands misaligned
