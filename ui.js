@@ -144,7 +144,7 @@ function displayPlaceName(place) {
     setTimeout(() => {announcement.style.opacity = 1;}, 50);
 
     var textWrapper = document.querySelector('.ml11 .letters');
-    textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"); // Wrap every letter in a span
+    textWrapper.innerHTML = textWrapper.textContent.replace(/([^\s])/g, "<span class='letter'>$&</span>"); // Wrap every letter in a span
 
     anime.timeline({})
         .add({
