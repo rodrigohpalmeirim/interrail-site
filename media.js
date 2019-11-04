@@ -1,5 +1,20 @@
 var pausedVideo;
 var temp;
+pinPhotos();
+
+function pinPhotos() {
+    let pinnedPhotos = document.querySelectorAll(".pinned-photo");
+    let categories = [nature, urban, urban, us];
+
+    for (p of pinnedPhotos) {
+        category = Math.floor(Math.random()*categories.length);
+        photo = Math.floor(Math.random()*categories[category].length);
+        p.src = "media/"+categories[category][photo];
+        categories[category].splice(photo, 1); // Attention
+        categories.splice(category, 1);
+    }
+}
+
 function showGallery() {
     let media = document.querySelector("#gallery .media");
 
