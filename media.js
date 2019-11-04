@@ -29,10 +29,26 @@ function showGallery() {
     }, 0); */
 }
 
-function showMediaViewer(src, type) {
+function showMediaViewer(element) {
     let mediaViewer = document.getElementById("media-viewer");
     let bigVideo = document.getElementById("big-video");
     let bigPhoto = document.getElementById("big-photo");
+    let src = element.firstElementChild.getAttribute("big-src");
+    let type = element.firstElementChild.getAttribute("type");
+    let previous = document.querySelector("#previous-item");
+    let next = document.querySelector("#next-item");
+
+    currentItem = element;
+
+    if (currentItem.previousElementSibling)
+        previous.style.opacity = 1;
+    else
+        previous.style.opacity = 0;
+
+    if (currentItem.nextElementSibling)
+        next.style.opacity = 1;
+    else
+        next.style.opacity = 0;
 
     mediaViewer.style.display = "block";
     if (transitioning) {
@@ -104,12 +120,12 @@ function updateMedia(startDate, endDate) {
             if (mediaItems[i].type == "photo")
                 media.innerHTML += `
                     <div style="--w: `+mediaItems[i].width+`; --h: `+mediaItems[i].height+`">
-                        <img class="thumbnail" src="`+"media/thumbnails/"+mediaItems[i].file+`" onclick="showMediaViewer('`+"media/"+mediaItems[i].file+`', 'photo')">
+                        <img class="thumbnail" src="`+"media/thumbnails/"+mediaItems[i].file+`" big-src="media/`+mediaItems[i].file+`" type="photo" onclick="showMediaViewer(this.parentElement)">
                     </div>`;
             else if (mediaItems[i].type == "video")
                 media.innerHTML += `
                     <div style="--w: `+mediaItems[i].width+`; --h: `+mediaItems[i].height+`; position: relative;">
-                        <img class="thumbnail" src="`+"media/thumbnails/"+mediaItems[i].file.replace("mp4", "jpg")+`" onclick="showMediaViewer('`+"media/"+mediaItems[i].file+`', 'video')"><img class="play-button" src="icons/play-button.png">
+                        <img class="thumbnail" src="`+"media/thumbnails/"+mediaItems[i].file.replace("mp4", "jpg")+`" big-src="media/`+mediaItems[i].file+`" type="video" onclick="showMediaViewer(this.parentElement)"><img class="play-button" src="icons/play-button.png">
                     </div>`;
         }
     }
