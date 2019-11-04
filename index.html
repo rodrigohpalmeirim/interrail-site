@@ -65,13 +65,15 @@
         <span class="time"></span><br>
         <span class="timezone"></span>
       </div>
-      <img id="next" src="icons/arrow.svg" onclick="nextPlace()">
-      <img id="previous" src="icons/arrow.svg" onclick="previousPlace()">
+      <img class="arrow-previous" id="previous-place" src="icons/arrow.svg" onclick="previousPlace()">
+      <img class="arrow-next" id="next-place" src="icons/arrow.svg" onclick="nextPlace()">
     </div>
     <div id="media-viewer">
       <img id="big-photo">
       <video id="big-video" controls autoplay></video>
       <img id="cross" src="icons/cross.png" onclick="hideMediaViewer()">
+      <img class="arrow-previous" id="previous-item" src="icons/arrow.svg" onclick="previousItem()">
+      <img class="arrow-next" id="next-item" src="icons/arrow.svg" onclick="nextItem()">
     </div>
     <div id="announcement">
       <h1 class="ml1">

@@ -1,5 +1,7 @@
 var pausedVideo;
 var temp;
+var currentItem;
+
 pinPhotos();
 
 function pinPhotos() {
@@ -97,7 +99,22 @@ function showMediaViewer(element) {
         e = e || window.event;
         if (e.key == "Escape") {
             hideMediaViewer();
+        } else if (e.key == "ArrowLeft") {
+            previousItem();
+        } else if (e.key == "ArrowRight") {
+            nextItem();
         }
+    }
+}
+
+function previousItem() {
+    if (currentItem.previousElementSibling) {
+        showMediaViewer(currentItem.previousElementSibling);
+    }
+}
+function nextItem() {
+    if (currentItem.nextElementSibling) {
+        showMediaViewer(currentItem.nextElementSibling);
     }
 }
 
@@ -128,7 +145,8 @@ function updateMedia(startDate, endDate) {
     let media = document.querySelector("#media-pane .media");
     let mediaPane = document.querySelector("#media-pane");
     let mediaViewer = document.querySelector("#media-viewer");
-    let next = document.querySelector("#next");
+    let nextPlace = document.querySelector("#next-place");
+    let nextItem = document.querySelector("#next-item");
     media.innerHTML = "";
     for (let i=0; i<mediaItems.length && (new Date(mediaItems[i].date+" "+mediaItems[i].time)<endDate); i++) {
         if (new Date(mediaItems[i].date+" "+mediaItems[i].time)>startDate) {
@@ -146,15 +164,15 @@ function updateMedia(startDate, endDate) {
     }
     if (media.childElementCount == 0) {
         mediaPane.style.width = "0%";
-        next.style.right = "1%";
+        nextPlace.style.right = "1%";
     } else if (media.childElementCount < 5) {
         mediaPane.style.width = "15%";
-        next.style.right = "16%";
+        nextPlace.style.right = "16%";
         mediaViewer.style.width = "85%";
         media.style.columnCount = 1;
     } else {
         mediaPane.style.width = "30%";
-        next.style.right = "31%";
+        nextPlace.style.right = "31%";
         mediaViewer.style.width = "70%";
         media.style.columnCount = 2;
     }
