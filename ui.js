@@ -66,8 +66,8 @@ function hidePlaceSelector() {
 }
 
 function updateNavigationArrows() {
-    let previous = document.querySelector("#previous");
-    let next = document.querySelector("#next");
+    let previous = document.querySelector("#previous-place");
+    let next = document.querySelector("#next-place");
     if (place == 0 && !transitioning) {
         previous.style.opacity = 0;
         previous.style.pointerEvents = "none";
