@@ -1,12 +1,14 @@
-add fav icon
-add return to title screen button
-add media viewer keyboard controls
-fix place selector closing bug
-fix clock hands misaligned
-fix animation canceling
+fix skip transition not loading video
+fix media viewer arrow missalignement
 fix small screen issues
-center things to accomodate media pane
-add panoramas
+fix small portrait photos on title screen
+add map work-in-progress message
+add return to title screen button
 filter photos
 add portuguese translation
 add phone incompatibility message
+add panoramas
+fix place selector closing bug
+fix clock hands misaligned
+fix animation canceling
+center things to accomodate media pane
