@@ -16,8 +16,11 @@ function startTour() {
         document.querySelector("#tour").style.display = "block";
         clearTimeouts();
     }, 500);
-    setTimeout(() => {displayPlaceName(places[place])}, 2800);
-    /* placeVideo.addEventListener("canplay", function() {placeVideo.play();}); */
+    setTimeout(() => {
+        displayPlaceName(places[place])
+        placeVideo.play();
+    }, 2800);
+    placeVideo.addEventListener("canplay", function() {placeVideo.play();});
 }
 
 function arrowKeyControl() {
