@@ -2,6 +2,7 @@ var map;
 
 function showMap() {
     document.querySelector("#map").style.display = "block";
+    document.querySelector("#wip").style.animation = "blink 1s ease 0s infinite alternate";
 }
 
 function initMap() {
