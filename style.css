@@ -70,6 +70,17 @@ html, body {
     font-family: "Caveat Brush";
 }
 
+#easter-egg {
+    position: absolute;
+    top: 43%;
+    left: 65%;
+    transform: translate(-50%, -50%) rotate(-10deg);
+    font-size: 50px;
+    font-family: "Caveat Brush";
+    opacity: 0;
+    transition: 0.5s;
+}
+
 #card-container {
     display: flex;
     position: absolute;
