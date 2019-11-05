@@ -6,6 +6,8 @@ var transitioning = false;
 var loaded = false;
 var timeouts = [];
 
+if (!window.chrome) document.querySelector("#incompatibility-screen").style.display = "block";
+
 function startTour() {
     touring = true;
     
