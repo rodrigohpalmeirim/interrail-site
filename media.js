@@ -145,7 +145,11 @@ function hideMediaViewer() {
             bigPhoto.style.display = "none";
             bigVideo.style.display = "none";
         }, 200);
-        arrowKeyControl();
+
+        if (touring)
+            arrowKeyControl();
+        else
+            document.onkeydown = null;
 }
 
 function updateMedia(startDate, endDate) {

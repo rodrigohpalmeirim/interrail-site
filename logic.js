@@ -1,11 +1,13 @@
 var placeVideo = document.getElementById("place-video");
 var transitionVideo = document.getElementById("transition-video");
 var reversedTransitionVideo = document.getElementById("reversed-transition-video");
+var touring = false;
 var transitioning = false;
-var loaded = true;
+var loaded = false;
 var timeouts = [];
 
 function startTour() {
+    touring = true;
     
     setClock(Date.parse(places[place].arrival.date+" "+places[place].arrival.time));
     updateMedia(new Date(places[place].arrival.date+" "+places[place].arrival.time), new Date(places[place].departure.date+" "+places[place].departure.time));
@@ -17,7 +19,8 @@ function startTour() {
         clearTimeouts();
     }, 500);
     setTimeout(() => {
-        displayPlaceName(places[place])
+        jumpToPlace(0);
+        arrowKeyControl();
         placeVideo.play();
     }, 2800);
     placeVideo.addEventListener("canplay", function() {placeVideo.play();});
@@ -35,7 +38,6 @@ function arrowKeyControl() {
         }
     }
 }
-arrowKeyControl();
 
 function nextPlace() {
     if (transitioning) {
