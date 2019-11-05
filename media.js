@@ -32,12 +32,12 @@ function showGallery() {
         if (mediaItems[i].type == "photo")
             media.innerHTML += `
                 <div style="--w: `+mediaItems[i].width+`; --h: `+mediaItems[i].height+`">
-                    <img class="lazyload thumbnail" data-src="`+"media/thumbnails/"+mediaItems[i].file+`" onclick="showMediaViewer('`+"media/"+mediaItems[i].file+`', 'photo')">
+                    <img class="lazyload thumbnail" data-src="`+"media/thumbnails/"+mediaItems[i].file+`" big-src="`+mediaItems[i].url+`" type="photo" onclick="showMediaViewer(this.parentElement)">
                 </div>`;
         else if (mediaItems[i].type == "video")
             media.innerHTML += `
                 <div style="--w: `+mediaItems[i].width+`; --h: `+mediaItems[i].height+`; position: relative;">
-                    <img class="lazyload thumbnail" data-src="`+"media/thumbnails/"+mediaItems[i].file.replace(".mp4", ".jpg")+`" onclick="showMediaViewer('`+"media/"+mediaItems[i].file+`', 'video')"><img class="play-button" src="icons/play-button.png">
+                    <img class="lazyload thumbnail" data-src="`+"media/thumbnails/"+mediaItems[i].file.replace(".mp4", ".jpg")+`" big-src="`+mediaItems[i].url+`" type="video" onclick="showMediaViewer(this.parentElement)"><img class="play-button" src="icons/play-button.png">
                 </div>`;
         if (i++ + 1 >= mediaItems.length) {
             clearInterval(temp);
