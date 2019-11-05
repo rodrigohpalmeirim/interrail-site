@@ -1,11 +1,6 @@
-fix day 7
-fix not waiting for first place video
-fix arrow keys outside of tour
-filter photos
+fix day 7?
 fix small screen issues
-add map work-in-progress message
 add return to title screen button
-add loading spinner to media viewer
 add portuguese translation
 add phone incompatibility message
 change cyberdog video
