@@ -214,23 +214,21 @@ html, body {
 .place-name:hover {
     background-color: rgba(255,255,255,0.2);
 }
-#next, #previous {
+.arrow-next, .arrow-previous {
     position: absolute;
     height: 40px;
     top: 50%;
     cursor: pointer;
-    opacity: 0;
     transition: 500ms;
 }
-#next {
-    right: 1%;
+.arrow-next {
+    right: 20px;
     transform: translateY(-50%);
 }
-#previous {
-    left: 1%;
+.arrow-previous {
+    left: 20px;
     transform: translateY(-50%) rotate(180deg);
 }
-
 
 #media-pane {
     position: absolute;
@@ -323,6 +321,10 @@ html, body {
     opacity: 0;
     transition: opacity 500ms;
     z-index: 11;
+}
+
+#place-name {
+    white-space: nowrap;
 }
 
 /* #day-text {
