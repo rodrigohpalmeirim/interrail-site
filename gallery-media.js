@@ -240,9 +240,6 @@ var galleryMedia = `
     <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190807_222627.jpg" big-src="https://www.googleapis.com/drive/v3/files/1hXE8Ry8ADhE5Texc3VwlrA9whrQPgIkI/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
 </div>
 <div style="--w: 4032; --h: 3024">
-    <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190808_002904.jpg" big-src="https://www.googleapis.com/drive/v3/files/1tr8gT5hU-kd1PEzIj3MIKEhVJQAWBHOs/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
-</div>
-<div style="--w: 4032; --h: 3024">
     <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190808_114513.jpg" big-src="https://www.googleapis.com/drive/v3/files/1Rp0bVkIb1-36aNOETZEfeeSVwxBjKJZ-/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
 </div>
 <div style="--w: 4032; --h: 3024">
@@ -476,9 +473,6 @@ var galleryMedia = `
 <div style="--w: 4032; --h: 3024">
     <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190811_112329.jpg" big-src="https://www.googleapis.com/drive/v3/files/1ttBU0gC88KmWrtHJtKPfwNeZYohjxGUv/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
 </div>
-<div style="--w: 3024; --h: 4032">
-    <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190811_113415.jpg" big-src="https://www.googleapis.com/drive/v3/files/1YuOLIPQPXkBn56X0iRChrZaYgBq2ulvX/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
-</div>
 <div style="--w: 4032; --h: 3024">
     <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190811_114545.jpg" big-src="https://www.googleapis.com/drive/v3/files/1j2qr5EDejuUgfJpa-Ae7t4ruO19HvHFQ/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
 </div>
@@ -490,9 +484,6 @@ var galleryMedia = `
 </div>
 <div style="--w: 4032; --h: 3024">
     <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190811_131930.jpg" big-src="https://www.googleapis.com/drive/v3/files/14vNKT9ditbEQR6SW4u3RzCM7Ej5ghm12/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
-</div>
-<div style="--w: 4032; --h: 3024">
-    <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190811_132831.jpg" big-src="https://www.googleapis.com/drive/v3/files/1ySIzLXPG2YtHgb1fT-XIWZgk6Hpag360/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
 </div>
 <div style="--w: 4032; --h: 3024">
     <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190811_133213.jpg" big-src="https://www.googleapis.com/drive/v3/files/13DzGuHcm3x8Y5b79ED9-sye4YOp9fjuu/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
@@ -735,18 +726,6 @@ var galleryMedia = `
     <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190813_002123.jpg" big-src="https://www.googleapis.com/drive/v3/files/1nSQeCuL_sJLMBF7dqpTg9wz4INamCXug/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
 </div>
 <div style="--w: 4032; --h: 3024">
-    <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190813_002440.jpg" big-src="https://www.googleapis.com/drive/v3/files/1cTKZvHm3bSc9f1ms5kIxJnXgzLbEbi51/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
-</div>
-<div style="--w: 4032; --h: 3024">
-    <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190813_002444.jpg" big-src="https://www.googleapis.com/drive/v3/files/1mhlK1bs4a0avFSstoxk3tB3fYRlOelkE/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
-</div>
-<div style="--w: 4032; --h: 3024">
-    <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190813_002500.jpg" big-src="https://www.googleapis.com/drive/v3/files/1hNByeCPexAibjMbhtRz2atHnoeLGgE4o/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
-</div>
-<div style="--w: 4032; --h: 3024">
-    <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190813_002503.jpg" big-src="https://www.googleapis.com/drive/v3/files/1b6XU-22wMUmVBe9LXJjLeRtFPaoHbgnR/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
-</div>
-<div style="--w: 4032; --h: 3024">
     <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190813_002620.jpg" big-src="https://www.googleapis.com/drive/v3/files/1Hb9_wlHzxTHQ8NTCrGwE_iNvZNKFWkVs/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
 </div>
 <div style="--w: 4032; --h: 3024">
@@ -874,27 +853,6 @@ var galleryMedia = `
 </div>
 <div style="--w: 4032; --h: 3024">
     <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190813_230052.jpg" big-src="https://www.googleapis.com/drive/v3/files/1fhVqmbF2MyDEp6WKDyI3d0w7ne-9dA9F/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
-</div>
-<div style="--w: 3024; --h: 4032">
-    <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190813_230620.jpg" big-src="https://www.googleapis.com/drive/v3/files/1z_LmDDzcnh3LditKvMsBPslOO3AhNHdG/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
-</div>
-<div style="--w: 3024; --h: 4032">
-    <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190813_231620.jpg" big-src="https://www.googleapis.com/drive/v3/files/1BqurMZSYGkKrLsfmehpS23Cbk3_7X58t/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
-</div>
-<div style="--w: 4032; --h: 3024">
-    <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190813_231625.jpg" big-src="https://www.googleapis.com/drive/v3/files/1eaay6SbPq555mnhiz23qXRulgqYlMu-D/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
-</div>
-<div style="--w: 3024; --h: 4032">
-    <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190813_232338.jpg" big-src="https://www.googleapis.com/drive/v3/files/1hVvLiqOx25ZtZ2Lz8IMjF-JM8DYt1XGb/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
-</div>
-<div style="--w: 3024; --h: 4032">
-    <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190813_232340.jpg" big-src="https://www.googleapis.com/drive/v3/files/1UxQWDnBcObGR7ZhwVGB36IYCylCoSfje/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
-</div>
-<div style="--w: 3024; --h: 4032">
-    <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190813_232341.jpg" big-src="https://www.googleapis.com/drive/v3/files/1MTxRILAhEM9j-oBqBTda-_RDyxGMhl10/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
-</div>
-<div style="--w: 3024; --h: 4032">
-    <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190813_232343.jpg" big-src="https://www.googleapis.com/drive/v3/files/1V4R7fvYcZnc3dk0tjiA75X4yvcHlqsw-/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
 </div>
 <div style="--w: 4032; --h: 3024">
     <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190814_000243.jpg" big-src="https://www.googleapis.com/drive/v3/files/1Td91dlIQxXkcXUkn8unyQ6HUyLbzHlJY/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
@@ -1036,9 +994,6 @@ var galleryMedia = `
 </div>
 <div style="--w: 3968; --h: 2976">
     <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190815_121243~2.jpg" big-src="https://www.googleapis.com/drive/v3/files/1edNopTdgvnPla2UuRl0Iz7TALd7V9SG8/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
-</div>
-<div style="--w: 2976; --h: 3968">
-    <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190815_121603.jpg" big-src="https://www.googleapis.com/drive/v3/files/1-YOBar557ksPzo3uxha8y1c5Aeoody2G/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
 </div>
 <div style="--w: 3968; --h: 2976">
     <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190815_122133.jpg" big-src="https://www.googleapis.com/drive/v3/files/120RehZgcab4zluY5qGYzfwggjdWge6jC/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
@@ -1231,9 +1186,6 @@ var galleryMedia = `
 </div>
 <div style="--w: 4032; --h: 3024">
     <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190816_142746.jpg" big-src="https://www.googleapis.com/drive/v3/files/1bftLDglBop0hEytBMSTUHY2LBvNTyJ-7/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
-</div>
-<div style="--w: 4032; --h: 3024">
-    <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190816_142751.jpg" big-src="https://www.googleapis.com/drive/v3/files/1mBGkssj99a7cJepAG6usYz5RGgh51IU-/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
 </div>
 <div style="--w: 3968; --h: 2976">
     <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190816_144515~3.jpg" big-src="https://www.googleapis.com/drive/v3/files/1M0Yqv0hDzu8726R_dzaVVSlD9nKNqsTI/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
@@ -1495,9 +1447,6 @@ var galleryMedia = `
 </div>
 <div style="--w: 4032; --h: 3024">
     <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190818_200214.jpg" big-src="https://www.googleapis.com/drive/v3/files/1kJUO46v1YQtLwsGjMUcYD-qSgBTZzhBs/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
-</div>
-<div style="--w: 1920; --h: 1080; position: relative;">
-    <img class="lazyload thumbnail" data-src="media/thumbnails/VID_20190818_211951.jpg" big-src="https://www.googleapis.com/drive/v3/files/1oJ7ruKwouBudLtYlTkNFqgVG0pdG0Yhs/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="video" onclick="showMediaViewer(this.parentElement)"><img class="play-button" src="icons/play-button.png">
 </div>
 <div style="--w: 4032; --h: 3024">
     <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190818_205455.jpg" big-src="https://www.googleapis.com/drive/v3/files/1fgYkovfjgrNq3n7J0lhXvLEKdEkb6Rr5/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
@@ -2295,37 +2244,10 @@ var galleryMedia = `
     <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190825_112134.jpg" big-src="https://www.googleapis.com/drive/v3/files/13G6IWTuzjQA96SHq9iocZVFefgDIaSBq/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
 </div>
 <div style="--w: 4032; --h: 3024">
-    <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190825_120534.jpg" big-src="https://www.googleapis.com/drive/v3/files/13kylZcIlfjpPZjhQA_cgC_3VMPDOxmiR/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
-</div>
-<div style="--w: 4032; --h: 3024">
     <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190825_120536.jpg" big-src="https://www.googleapis.com/drive/v3/files/1RY88Agn1ogNIOR304c8DwBE0974fAsSi/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
 </div>
 <div style="--w: 4032; --h: 3024">
-    <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190825_120552.jpg" big-src="https://www.googleapis.com/drive/v3/files/1IFY7DV0rpzspppfoQm36k2RROl7JNW7N/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
-</div>
-<div style="--w: 4032; --h: 3024">
-    <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190825_120555.jpg" big-src="https://www.googleapis.com/drive/v3/files/1X1uZQLbCgahM2cdP5fR6UVUnoILs8fds/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
-</div>
-<div style="--w: 4032; --h: 3024">
     <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190825_120604.jpg" big-src="https://www.googleapis.com/drive/v3/files/1sY1If9nom1DD1FFJyYugx7b5NgH1XLmX/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
-</div>
-<div style="--w: 4032; --h: 3024">
-    <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190825_120609.jpg" big-src="https://www.googleapis.com/drive/v3/files/1RNx4rEoLkgEgrAM_dfs_noK6vVcg68Ka/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
-</div>
-<div style="--w: 4032; --h: 3024">
-    <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190825_120610.jpg" big-src="https://www.googleapis.com/drive/v3/files/1UK54IDrysbawMvijz5mZFuhmRExYGef7/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
-</div>
-<div style="--w: 4032; --h: 3024">
-    <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190825_120659.jpg" big-src="https://www.googleapis.com/drive/v3/files/1niGwKoXhHh6jHOR7Agx_IQSyUmMjG2BO/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
-</div>
-<div style="--w: 4032; --h: 3024">
-    <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190825_120701.jpg" big-src="https://www.googleapis.com/drive/v3/files/1uw9CMomhwHI0-tyjCMsy4RdRZbdwHhep/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
-</div>
-<div style="--w: 4032; --h: 3024">
-    <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190825_120708.jpg" big-src="https://www.googleapis.com/drive/v3/files/1vNUBTOr0oUrDkOsI0WxdvgTKT8NZV8bN/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
-</div>
-<div style="--w: 4032; --h: 3024">
-    <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190825_120710.jpg" big-src="https://www.googleapis.com/drive/v3/files/1ulkkVIxGKEIaF3x2seAWMNhqn5SfYuq-/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
 </div>
 <div style="--w: 4032; --h: 3024">
     <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190825_120712.jpg" big-src="https://www.googleapis.com/drive/v3/files/1ztRtxhm7w3ErsSkBTje6zqVWbo2W1tRZ/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
@@ -2534,24 +2456,6 @@ var galleryMedia = `
 <div style="--w: 4032; --h: 3024">
     <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190825_220843.jpg" big-src="https://www.googleapis.com/drive/v3/files/1tu45RolCcnTDCDofdiMrjPcYp_D6Kt9Z/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
 </div>
-<div style="--w: 360; --h: 640; position: relative;">
-    <img class="lazyload thumbnail" data-src="media/thumbnails/VID_20190826_075730.jpg" big-src="https://www.googleapis.com/drive/v3/files/1hDDgsFmkt6APgcJWp8SxBjTQDlryZdnV/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="video" onclick="showMediaViewer(this.parentElement)"><img class="play-button" src="icons/play-button.png">
-</div>
-<div style="--w: 1080; --h: 1920; position: relative;">
-    <img class="lazyload thumbnail" data-src="media/thumbnails/VID_20190826_080330.jpg" big-src="https://www.googleapis.com/drive/v3/files/19bSryrSJuZJR3rGtr7ca5z9GDh210sSo/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="video" onclick="showMediaViewer(this.parentElement)"><img class="play-button" src="icons/play-button.png">
-</div>
-<div style="--w: 1920; --h: 1080; position: relative;">
-    <img class="lazyload thumbnail" data-src="media/thumbnails/VID_20190826_084059.jpg" big-src="https://www.googleapis.com/drive/v3/files/160gunY9mpUJMD4TYFIrCEJLf4bi6JfUz/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="video" onclick="showMediaViewer(this.parentElement)"><img class="play-button" src="icons/play-button.png">
-</div>
-<div style="--w: 1920; --h: 1080; position: relative;">
-    <img class="lazyload thumbnail" data-src="media/thumbnails/VID_20190826_100632.jpg" big-src="https://www.googleapis.com/drive/v3/files/1GyRydNQzV1IikhEAQjFikEg_ZKYzg0NS/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="video" onclick="showMediaViewer(this.parentElement)"><img class="play-button" src="icons/play-button.png">
-</div>
-<div style="--w: 1920; --h: 1080; position: relative;">
-    <img class="lazyload thumbnail" data-src="media/thumbnails/VID_20190826_191035.jpg" big-src="https://www.googleapis.com/drive/v3/files/1zm4ZKeePpy0ixwF4RIBYKoExxAefSofU/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="video" onclick="showMediaViewer(this.parentElement)"><img class="play-button" src="icons/play-button.png">
-</div>
-<div style="--w: 4032; --h: 3024">
-    <img class="lazyload thumbnail" data-src="media/thumbnails/00000IMG_00000_BURST20190826191516321_COVER.jpg" big-src="https://www.googleapis.com/drive/v3/files/1T6nlE0KlVbouq1H5oNxySbxZcXBUDP6i/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
-</div>
 <div style="--w: 4032; --h: 3024">
     <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190826_073519.jpg" big-src="https://www.googleapis.com/drive/v3/files/1XbpsjYVYl2aaHgz8nOr2-Cf9WRP75TNL/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
 </div>
@@ -2564,12 +2468,6 @@ var galleryMedia = `
 <div style="--w: 4032; --h: 3024">
     <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190826_073535.jpg" big-src="https://www.googleapis.com/drive/v3/files/1YRy1fWKY__uFnlSUEMRfeOb_na-yvjer/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
 </div>
-<div style="--w: 3840; --h: 2160">
-    <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190826_074743.jpg" big-src="https://www.googleapis.com/drive/v3/files/1JLc_J6k9EHsAbeNYAq7nYh_9GT_SPAdU/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
-</div>
-<div style="--w: 3840; --h: 2160">
-    <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190826_075828.jpg" big-src="https://www.googleapis.com/drive/v3/files/1RiW4SysO1plRIGQVa_Hw0rgkZ0fq7h12/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
-</div>
 <div style="--w: 4032; --h: 3024">
     <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190826_081903.jpg" big-src="https://www.googleapis.com/drive/v3/files/17QIbAjS3wI83T0wjsMCnTHljkMWjnjSH/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
 </div>
@@ -2578,6 +2476,9 @@ var galleryMedia = `
 </div>
 <div style="--w: 4032; --h: 3024">
     <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190826_083013.jpg" big-src="https://www.googleapis.com/drive/v3/files/1arksh4R9nEy8XvB_YkDqSCV73ZAXs45D/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
+</div>
+<div style="--w: 1920; --h: 1080; position: relative;">
+    <img class="lazyload thumbnail" data-src="media/thumbnails/VID_20190826_084059.jpg" big-src="https://www.googleapis.com/drive/v3/files/160gunY9mpUJMD4TYFIrCEJLf4bi6JfUz/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="video" onclick="showMediaViewer(this.parentElement)"><img class="play-button" src="icons/play-button.png">
 </div>
 <div style="--w: 4032; --h: 3024">
     <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190826_090153.jpg" big-src="https://www.googleapis.com/drive/v3/files/197SyNWAUhEAgpKk6bR9boz3DvL5FuEc3/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
@@ -2617,6 +2518,9 @@ var galleryMedia = `
 </div>
 <div style="--w: 4032; --h: 3024">
     <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190826_093126.jpg" big-src="https://www.googleapis.com/drive/v3/files/1v8xhuNXFXn9kWGRtUfzbpOyuelPz6S5-/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
+</div>
+<div style="--w: 1920; --h: 1080; position: relative;">
+    <img class="lazyload thumbnail" data-src="media/thumbnails/VID_20190826_100632.jpg" big-src="https://www.googleapis.com/drive/v3/files/1GyRydNQzV1IikhEAQjFikEg_ZKYzg0NS/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="video" onclick="showMediaViewer(this.parentElement)"><img class="play-button" src="icons/play-button.png">
 </div>
 <div style="--w: 3968; --h: 2976">
     <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190826_104439.jpg" big-src="https://www.googleapis.com/drive/v3/files/15erMuhw_X7leYpwKtx_tdK5_V0EpJWTA/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
@@ -2672,11 +2576,17 @@ var galleryMedia = `
 <div style="--w: 4032; --h: 3024">
     <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190826_191021.jpg" big-src="https://www.googleapis.com/drive/v3/files/1-cNmFD9FATzpcKF8Rvc4q-1mRO24mPvc/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
 </div>
+<div style="--w: 1920; --h: 1080; position: relative;">
+    <img class="lazyload thumbnail" data-src="media/thumbnails/VID_20190826_191035.jpg" big-src="https://www.googleapis.com/drive/v3/files/1zm4ZKeePpy0ixwF4RIBYKoExxAefSofU/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="video" onclick="showMediaViewer(this.parentElement)"><img class="play-button" src="icons/play-button.png">
+</div>
 <div style="--w: 4032; --h: 3024">
     <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190826_191425.jpg" big-src="https://www.googleapis.com/drive/v3/files/11TDrNsz7QOwOaPD430zy6fcZYWYrpQf9/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
 </div>
 <div style="--w: 4032; --h: 3024">
     <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190826_191427.jpg" big-src="https://www.googleapis.com/drive/v3/files/1h6mKT7nO89GE1YQJEWE8VbPBl6aI6pSS/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
+</div>
+<div style="--w: 4032; --h: 3024">
+    <img class="lazyload thumbnail" data-src="media/thumbnails/00000IMG_00000_BURST20190826191516321_COVER.jpg" big-src="https://www.googleapis.com/drive/v3/files/1T6nlE0KlVbouq1H5oNxySbxZcXBUDP6i/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
 </div>
 <div style="--w: 4032; --h: 3024">
     <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190826_191805.jpg" big-src="https://www.googleapis.com/drive/v3/files/1IBwixKAyHlnLqnSM3U6k6XfLKpFQgQuH/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
