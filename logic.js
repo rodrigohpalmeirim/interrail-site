@@ -45,7 +45,6 @@ function nextPlace() {
         transitioning = true;
         hidePlaceSelector();
         hideAnnouncement();
-        updateNavigationArrows();
         fastForward(Date.parse(places[place].departure.date+" "+places[place].departure.time.split("+")[0]), Date.parse(places[place+1].arrival.date+" "+places[place+1].arrival.time.split("+")[0]));
         updateMedia(new Date(places[place].departure.date+" "+places[place].departure.time), new Date(places[place+1].arrival.date+" "+places[place+1].arrival.time));
         timeouts.push(setTimeout(() => {placeVideo.pause();}, 500));
@@ -64,8 +63,9 @@ function nextPlace() {
                 placeVideo.oncanplay = null;
                 showPlaceSelector();
             };
-            reversedTransitionVideo.src = places[place].transitionVideo.split(".")[0] + "-reversed.mp4";
+            reversedTransitionVideo.src = places[place].reversedTransitionVideo;
             transitioning = false;
+            updateNavigationArrows();
             transitionVideo.onended = null;
             setClock(Date.parse(places[place].arrival.date+" "+places[place].arrival.time.split("+")[0]));
             timeouts.push(setTimeout(function() {updateMedia(new Date(places[place].arrival.date+" "+places[place].arrival.time), new Date(places[place].departure.date+" "+places[place].departure.time));}, 500));
@@ -80,7 +80,6 @@ function previousPlace() {
         transitioning = true;
         hidePlaceSelector();
         hideAnnouncement();
-        updateNavigationArrows();
         fastForward(Date.parse(places[place].arrival.date+" "+places[place].arrival.time.split("+")[0]), Date.parse(places[place-1].arrival.date+" "+places[place-1].arrival.time.split("+")[0]));
         updateMedia(new Date(places[place-1].departure.date+" "+places[place-1].departure.time), new Date(places[place].arrival.date+" "+places[place].arrival.time));
         place--;
@@ -93,7 +92,7 @@ function previousPlace() {
             displayPlaceName(places[place]);
             loaded = false;
             if (place > 0) timeouts.push(setTimeout(() => {
-                reversedTransitionVideo.src = places[place].transitionVideo.split(".")[0] + "-reversed.mp4";
+                reversedTransitionVideo.src = places[place].reversedTransitionVideo;
             }, 500));
             placeVideo.oncanplay = function() {
                 loaded = true;
@@ -103,6 +102,7 @@ function previousPlace() {
             }
             transitionVideo.src = places[place+1].transitionVideo;
             transitioning = false;
+            updateNavigationArrows();
             timeouts.push(setTimeout(function() {updateMedia(new Date(places[place].arrival.date+" "+places[place].arrival.time), new Date(places[place].departure.date+" "+places[place].departure.time));}, 500));
         }
     }
@@ -126,7 +126,7 @@ function jumpToPlace(placeID) {
         transitionVideo.style.opacity = 0;
         reversedTransitionVideo.style.opacity = 0;
         if (place < places.length-1) transitionVideo.src = places[place+1].transitionVideo;
-        if (place > 0) reversedTransitionVideo.src = places[place].transitionVideo.split(".")[0] + "-reversed.mp4";
+        if (place > 0) reversedTransitionVideo.src = places[place].reversedTransitionVideo;
     }, 500));
 }
 
