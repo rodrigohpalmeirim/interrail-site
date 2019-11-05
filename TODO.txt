@@ -1,12 +1,10 @@
-fix skip transition not loading video
-fix media viewer arrow missalignement
+filter photos
 fix small screen issues
-fix small portrait photos on title screen
 add map work-in-progress message
 add return to title screen button
-filter photos
 add portuguese translation
 add phone incompatibility message
+change cyberdog video
 add panoramas
 fix place selector closing bug
 fix clock hands misaligned
