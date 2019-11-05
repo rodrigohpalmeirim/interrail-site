@@ -17,6 +17,7 @@ if (!window.chrome || window.mobileAndTabletcheck())
 document.onkeydown = function(e) {
     e = e || window.event;
     if (e.key == "T") {
+        document.querySelector("#easter-egg").style.visibility = "visible";
         document.querySelector("#easter-egg").style.opacity = 1;
     }
 }
