@@ -90,6 +90,7 @@ function showMediaViewer(element) {
     if (type == "photo") {
         bigVideo.src = "";
         bigVideo.style.display = "none";
+        bigPhoto.src = "";
         bigPhoto.src = src;
         bigPhoto.style.display = "block";
         setTimeout(() => {bigPhoto.style.opacity = 1;}, 1);
@@ -154,8 +155,8 @@ function updateMedia(startDate, endDate) {
     let nextPlace = document.querySelector("#next-place");
     let nextItem = document.querySelector("#next-item");
     media.innerHTML = "";
-    for (let i=0; i<mediaItems.length && (new Date(mediaItems[i].date+" "+mediaItems[i].time)<endDate); i++) {
-        if (new Date(mediaItems[i].date+" "+mediaItems[i].time)>startDate) {
+    for (let i=0; i<mediaItems.length; i++) {
+        if (new Date(mediaItems[i].date+" "+mediaItems[i].time)>startDate && (new Date(mediaItems[i].date+" "+mediaItems[i].time)<endDate)) {
             if (mediaItems[i].type == "photo")
                 media.innerHTML += `
                     <div style="--w: `+mediaItems[i].width+`; --h: `+mediaItems[i].height+`">
