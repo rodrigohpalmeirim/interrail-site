@@ -23,6 +23,35 @@ html, body {
     background-color: #206490;
 }
 
+.pinned-photo {
+    position: absolute;
+    max-height: 30%;
+    max-width: 18%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    transition: 0.5s;
+    opacity: 0;
+}
+#photo-1 {
+    top: 10%;
+    right: 10%;
+    transform: rotate(10deg);
+}
+#photo-2 {
+    top: 60%;
+    right: 5%;
+    transform: rotate(-6deg);
+}
+#photo-3 {
+    top: 16%;
+    left: 10%;
+    transform: rotate(-8deg);
+}
+#photo-4 {
+    top: 64%;
+    left: 5%;
+    transform: rotate(7deg);
+}
+
 #title {
     position: absolute;
     top: 25%;
