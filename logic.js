@@ -123,6 +123,8 @@ function jumpToPlace(placeID) {
             showPlaceSelector();
         }
         updateMedia(new Date(places[place].arrival.date+" "+places[place].arrival.time), new Date(places[place].departure.date+" "+places[place].departure.time));
+        transitionVideo.style.opacity = 0;
+        reversedTransitionVideo.style.opacity = 0;
         if (place < places.length-1) transitionVideo.src = places[place+1].transitionVideo;
         if (place > 0) reversedTransitionVideo.src = places[place].transitionVideo.split(".")[0] + "-reversed.mp4";
     }, 500));
@@ -132,24 +134,7 @@ function skipTransition() {
     hideAnnouncement();
     clearTimeouts();
     clearInterval(clockInterval);
-    placeVideo.src = places[place].video;
-    setClock(Date.parse(places[place].arrival.date+" "+places[place].arrival.time.split("+")[0]));
-    loaded = false;
-    placeVideo.oncanplay = function() {
-        loaded = true;
-        placeVideo.oncanplay = null;
-        updateNavigationArrows();
-        showPlaceSelector();
-    }
-    /* placeVideo.play(); */
-    timeouts.push(setTimeout(() => {
-        updateMedia(new Date(places[place].arrival.date+" "+places[place].arrival.time), new Date(places[place].departure.date+" "+places[place].departure.time));
-        transitionVideo.style.opacity = 0;
-        reversedTransitionVideo.style.opacity = 0;
-        if (place < places.length-1) transitionVideo.src = places[place+1].transitionVideo;
-        if (place > 0) reversedTransitionVideo.src = places[place].transitionVideo.split(".")[0] + "-reversed.mp4";
-        displayPlaceName(places[place]);
-    }, 500));
+    jumpToPlace(place);
     transitioning = false;
 }
 
