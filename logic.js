@@ -14,6 +14,13 @@ window.mobileAndTabletcheck = function() {
 if (!window.chrome || window.mobileAndTabletcheck())
     document.querySelector("#incompatibility-screen").style.display = "block";
 
+document.onkeydown = function(e) {
+    e = e || window.event;
+    if (e.key == "T") {
+        document.querySelector("#easter-egg").style.opacity = 1;
+    }
+}
+
 function startTour() {
     touring = true;
     
