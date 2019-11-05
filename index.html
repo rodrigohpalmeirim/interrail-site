@@ -71,6 +71,10 @@
       <img class="arrow-next" id="next-place" src="icons/arrow.svg" onclick="nextPlace()">
     </div>
     <div id="media-viewer">
+      <div class="spinner" id="media-spinner">
+        <div class="cube1"></div>
+        <div class="cube2"></div>
+      </div>
       <img id="big-photo">
       <video id="big-video" controls autoplay></video>
       <img id="cross" src="icons/cross.png" onclick="hideMediaViewer()">
@@ -91,7 +95,7 @@
           <span id="place-name" class="letters"></span>
         </span>
       </h1>
-      <div class="spinner">
+      <div class="spinner" id="announcement-spinner">
         <div class="cube1"></div>
         <div class="cube2"></div>
       </div>

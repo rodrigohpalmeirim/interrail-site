@@ -138,7 +138,7 @@ function displayPlaceName(place) {
     document.querySelector(".ml11").style.opacity = 1;
     announcement.style.display = "block";
     announcement.style.backgroundColor = colors[place.color];
-    /* document.querySelector(".spinner").style.opacity = 1; */
+    /* document.querySelector("#announcement-spinner").style.opacity = 1; */
     text.textContent = place.name;
 
     setTimeout(() => {announcement.style.opacity = 1;}, 50);
@@ -148,7 +148,7 @@ function displayPlaceName(place) {
 
     anime.timeline({})
         .add({
-            targets: '.spinner',
+            targets: '#announcement-spinner',
             opacity: [0,1],
             duration: 500,
             easing: "easeInExpo"
@@ -184,7 +184,7 @@ function displayPlaceName(place) {
                 timeouts.push(setTimeout(() => {hideAnnouncement();}, 500));
             } else {
                 /* anime.timeline().add({
-                    targets: '.spinner',
+                    targets: '#announcement-spinner',
                     opacity: [0,1],
                     duration: 300,
                     easing: "easeInExpo"
@@ -208,7 +208,7 @@ function hideAnnouncement() {
         announcement.style.display = "none";
         document.querySelector(".ml1").style.opacity = 0;
         document.querySelector(".ml11").style.opacity = 0;
-        document.querySelector(".spinner").style.opacity = 0;
+        document.querySelector("#announcement-spinner").style.opacity = 0;
         document.querySelector(".line1").style.opacity = 0;
         document.querySelector(".line2").style.opacity = 0;
     }, 500));

@@ -63,6 +63,8 @@ function showMediaViewer(element) {
 
     currentItem = element;
 
+    document.querySelector("#media-spinner").style.opacity = 1;
+
     if (currentItem.previousElementSibling)
         previous.style.opacity = 1;
     else
@@ -129,6 +131,8 @@ function hideMediaViewer() {
     let mediaViewer = document.getElementById("media-viewer");
     let bigVideo = document.getElementById("big-video");
     let bigPhoto = document.getElementById("big-photo");
+
+    document.querySelector("#media-spinner").style.opacity = 0;
 
     if (clockPaused) resumeClock();
         if (pausedVideo != null) {
