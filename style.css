@@ -75,7 +75,7 @@ html, body {
     top: 43%;
     left: 65%;
     transform: translate(-50%, -50%) rotate(-10deg);
-    font-size: 50px;
+    font-size: 3vw;
     font-family: "Caveat Brush";
     opacity: 0;
     transition: 0.5s;
