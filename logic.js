@@ -22,6 +22,11 @@ document.onkeydown = function(e) {
     }
 }
 
+function fitScreen() {
+    document.querySelector("#card-container").style.zoom = window.innerWidth/900*0.5
+}
+fitScreen();
+
 function startTour() {
     touring = true;
     
