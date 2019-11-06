@@ -143,6 +143,13 @@ html, body {
     overflow: scroll;
     opacity: 0;
     transition: 0.5s;
+    text-align: center;
+}
+
+#gallery-title {
+    font-family: "Caveat Brush";
+    font-size: 4rem;
+    line-height: 120px;
 }
 
 #tour {
