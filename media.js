@@ -161,7 +161,7 @@ function updateMedia(startDate, endDate) {
     let mediaPane = document.querySelector("#media-pane");
     let mediaViewer = document.querySelector("#media-viewer");
     let nextPlace = document.querySelector("#next-place");
-    let nextItem = document.querySelector("#next-item");
+    let exit = document.querySelector("#exit-tour");
     media.innerHTML = "";
     for (let i=0; i<mediaItems.length; i++) {
         if (new Date(mediaItems[i].date+" "+mediaItems[i].time)>startDate && (new Date(mediaItems[i].date+" "+mediaItems[i].time)<endDate)) {
@@ -180,14 +180,17 @@ function updateMedia(startDate, endDate) {
     if (media.childElementCount == 0) {
         mediaPane.style.width = "0%";
         nextPlace.style.right = "20px";
+        exit.style.right = "20px";
     } else if (media.childElementCount < 5) {
         mediaPane.style.width = "15%";
         nextPlace.style.right = "calc(15% + 20px)";
+        exit.style.right = "calc(15% + 20px)";
         mediaViewer.style.width = "85%";
         media.style.columnCount = 1;
     } else {
         mediaPane.style.width = "30%";
         nextPlace.style.right = "calc(30% + 20px)";
+        exit.style.right = "calc(30% + 20px)";
         mediaViewer.style.width = "70%";
         media.style.columnCount = 2;
     }
