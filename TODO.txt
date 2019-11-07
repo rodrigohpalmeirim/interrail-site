@@ -1,8 +1,5 @@
-fix day 7?
-fix small screen issues
-add return to title screen button
+add arrival photos
 add portuguese translation
-add phone incompatibility message
 change cyberdog video
 add gallery scrollbar
 fix videos too large on media pane (ex. Botanical Garden)
