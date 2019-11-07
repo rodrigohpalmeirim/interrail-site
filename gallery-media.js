@@ -2707,4 +2707,19 @@ var galleryMedia = `
 </div>
 <div style="--w: 4032; --h: 3024">
     <img class="lazyload thumbnail" data-src="media/thumbnails/IMG_20190827_201237.jpg" big-src="https://www.googleapis.com/drive/v3/files/1IptGA8lBjetP5xb4T_JCIzPbqI5FQDhL/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
+</div>
+<div style="--w: 1920; --h: 908">
+    <img class="lazyload thumbnail" data-src="media/thumbnails/WhatsApp_Image_2019-08-27_at_22.57.47.jpeg" big-src="https://www.googleapis.com/drive/v3/files/1QLm6qLTpsxND2UExQEUhfX9KnF7c7yl0/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
+</div>
+<div style="--w: 1919; --h: 909">
+    <img class="lazyload thumbnail" data-src="media/thumbnails/WhatsApp_Image_2019-08-27_at_22.57.46.jpeg" big-src="https://www.googleapis.com/drive/v3/files/1jVaZb_nqPV0DwmYIeu30ZzpZmH8dScAK/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
+</div>
+<div style="--w: 1440; --h: 1920">
+    <img class="lazyload thumbnail" data-src="media/thumbnails/WhatsApp_Image_2019-08-27_at_22.55.45.jpeg" big-src="https://www.googleapis.com/drive/v3/files/1A4KmqOXjM9E2ubKl1DcioPIozSzpmQES/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
+</div>
+<div style="--w: 1920; --h: 1440">
+    <img class="lazyload thumbnail" data-src="media/thumbnails/WhatsApp_Image_2019-08-27_at_22.54.26.jpeg" big-src="https://www.googleapis.com/drive/v3/files/18QLGroFPy1tjAkxS5aUUZhi9tlEzwWID/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
+</div>
+<div style="--w: 1920; --h: 1440">
+    <img class="lazyload thumbnail" data-src="media/thumbnails/WhatsApp_Image_2019-08-27_at_22.56.46.jpeg" big-src="https://www.googleapis.com/drive/v3/files/1qCY2jtjYkA2k3UGWXYW4h4InKCYLsbKB/?key=AIzaSyD6OMqmjeyI99QmGJo9W_o0tOQLrx0g4E4&amp;alt=media" type="photo" onclick="showMediaViewer(this.parentElement)">
 </div>`;
