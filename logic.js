@@ -23,7 +23,7 @@ document.onkeydown = function(e) {
 }
 
 function fitScreen() {
-    document.querySelector("#card-container").style.zoom = Math.min(window.innerWidth/900*0.5, window.innerHeight/360*0.5);
+    document.querySelector("#card-container").style.zoom = Math.min(window.innerWidth/900*0.45, window.innerHeight/360*0.45);
 }
 fitScreen();
 
